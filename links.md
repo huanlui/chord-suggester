@@ -3,7 +3,7 @@
 ## TDD and notebooks
 
 * [IPython-Unittest](https://github.com/JoaoFelipe/ipython-unittest). Some magics to add test support in Notebooks.
-* https://stackoverflow.com/questions/40172281/unit-tests-for-functions-in-a-jupyter-notebook
+* [Unit tests for functions in a Jupyter notebook?](https://stackoverflow.com/questions/40172281/unit-tests-for-functions-in-a-jupyter-notebook). Stackoverflow question speking about that. 
 * https://www.mikulskibartosz.name/test-driven-development-in-jupyter-notebook/
 * https://guillaume-chevalier.com/how-to-grow-neat-software-architecture-out-of-jupyter-notebooks/
 
