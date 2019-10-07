@@ -11,4 +11,5 @@
 ## Similar proyects
 
 * [Sistema inteligente para composición armónica musical](https://e-archivo.uc3m.es/bitstream/handle/10016/11177/Sistema%20inteligente%20para%20composicion%20armonica%20musical.pdf?sequence=1&isAllowed=y). Expert system by Celia Clemente Castillo (PFC, Carlos III University).
+* [Python app that generates a Guitar Pro tab from a guitar audio file](https://github.com/Aturt2/music-sheet-generator). KSchool Data Science Master's thesis.
 
