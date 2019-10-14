@@ -29,5 +29,6 @@ This file will contain reference links that in some way are useful for understan
 
 (to improve my pessimal productivity using Mac as a old Window user...)
 
-* [iTerm2 + zsh + oh-my-zsh The Most Power Full Terminal on macOS](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c). Some vitamins for your Mac Terminal, 
+* [iTerm2 + zsh + oh-my-zsh The Most Power Full Terminal on macOS](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c). Some vitamins for your Mac Terminal.
+* [More about zsh plugins](https://hackernoon.com/oh-my-zsh-made-for-cli-lovers-bea538d42ec1)
 * [Zsh Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions). Zsh Plugin to show auto suggestion based on history. 
