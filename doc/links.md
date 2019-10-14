@@ -1,5 +1,7 @@
 # Links
 
+This file will contain reference links that in some way are useful for understanding both the field of application of this project and its technical approach.
+
 ## TDD and notebooks
 
 * [IPython-Unittest](https://github.com/JoaoFelipe/ipython-unittest). Some magics to add test support in Notebooks.
