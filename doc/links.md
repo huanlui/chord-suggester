@@ -25,3 +25,7 @@ This file will contain reference links that in some way are useful for understan
 * [Python app that generates a Guitar Pro tab from a guitar audio file](https://github.com/Aturt2/music-sheet-generator). KSchool Data Science Master's thesis.
 * [Hands-On AI Part 20: Music Data Collection and Exploration](https://software.intel.com/en-us/articles/hands-on-ai-part-20-music-data-collection-and-exploration). By Intel AI Developer Program. It demostrates the use of music21 library. 
 
+## Using MAC (to improve my pessimal productivity using Mac as a old Window user...)
+
+* [iTerm2 + zsh + oh-my-zsh The Most Power Full Terminal on macOS](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c). Some vitamins for your Mac Terminal, 
+* [Zsh Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions). Zsh Plugin to show auto suggestion based on history. 
