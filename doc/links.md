@@ -3,7 +3,7 @@
 This file will contain reference links that in some way are useful for understanding both the field of application of this project and its technical approach.
 
 ## Music
-spa
+
 * [Por qué tenemos 12 notas musicales. Música y matemáticas](https://www.youtube.com/watch?v=P7iC-fbdKmQ). In Spanish, great to understand the maths beneath music. 
 * [Listen by numbers. Musica and maths](https://www.theguardian.com/music/2011/jun/27/music-mathematics-fibonacci). Not so visual as the previous one, but still an interesnting article. 
 
