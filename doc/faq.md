@@ -2,6 +2,8 @@
 
 ## Oh My Zsh and Anaconda
 
+**Question**
+
 I intalled Anaconda and after some weeks I installed _Oh my Zsh!_. Now I can't find commands such us jupyter, etc. 
 
 **Solution**
