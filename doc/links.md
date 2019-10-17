@@ -24,6 +24,7 @@ This file will contain reference links that in some way are useful for understan
 * [Sistema inteligente para composición armónica musical](https://e-archivo.uc3m.es/bitstream/handle/10016/11177/Sistema%20inteligente%20para%20composicion%20armonica%20musical.pdf?sequence=1&isAllowed=y). Expert system by Celia Clemente Castillo (PFC, Carlos III University).
 * [Python app that generates a Guitar Pro tab from a guitar audio file](https://github.com/Aturt2/music-sheet-generator). KSchool Data Science Master's thesis.
 * [Hands-On AI Part 20: Music Data Collection and Exploration](https://software.intel.com/en-us/articles/hands-on-ai-part-20-music-data-collection-and-exploration). By Intel AI Developer Program. It demostrates the use of music21 library. 
+* [MIDI Music Data Extraction using Music21 and Word2Vec on Kaggle](https://towardsdatascience.com/midi-music-data-extraction-using-music21-and-word2vec-on-kaggle-cb383261cd4e)
 
 ## Using MAC 
 
@@ -32,3 +33,7 @@ This file will contain reference links that in some way are useful for understan
 * [iTerm2 + zsh + oh-my-zsh The Most Power Full Terminal on macOS](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c). Some vitamins for your Mac Terminal.
 * [More about zsh plugins](https://hackernoon.com/oh-my-zsh-made-for-cli-lovers-bea538d42ec1)
 * [Zsh Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions). Zsh Plugin to show auto suggestion based on history. 
+
+## Music Analisis
+
+* [Plugins for chords detection](https://musescore.org/en/node/263921)
