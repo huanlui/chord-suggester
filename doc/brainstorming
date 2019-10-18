@@ -5,3 +5,11 @@ No-sense ideas...
 What if we extract chords for modern music just getting from chord pages instead of midi files?
 
 Use chord live detection project (fropm KSchool) to listen to a guitar, detect chords and suggest next. 
+
+I should explain why I decided to change the strategy from midi processing to scraping. 
+
+I should explain msuc conceps using music21, with sheets and music examples:
+* Notes.
+* Chords.
+* Notas extrañas 
+....
