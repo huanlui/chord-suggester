@@ -44,4 +44,5 @@ This file will contain reference links that in some way are useful for understan
 
 ## Papers
 
-* [CHORD DETECTION USING DEEP LEARNING](CHORD DETECTION USING DEEP LEARNING)
+* [CHORD DETECTION USING DEEP LEARNING](http://ismir2015.uma.es/articles/96_Paper.pdf)
+* https://www.google.com/search?q=chord+prediction+machine+learning&oq=chord&aqs=chrome.0.69i59l2j69i57j69i60l3.6845j0j7&sourceid=chrome&ie=UTF-8
