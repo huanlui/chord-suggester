@@ -17,3 +17,7 @@ I should explain msuc conceps using music21, with sheets and music examples:
 If I could represent the chords as vector, It would be easier and faster to train
 
 https://medium.com/@gruizdevilla/introducci%C3%B3n-a-word2vec-skip-gram-model-4800f72c871f
+
+Como represento el círuclo de quintas en términos de distancia. Idea parecida. 
+
+https://towardsdatascience.com/feature-engineering-time-3934038e0dbe
