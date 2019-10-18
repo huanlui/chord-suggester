@@ -6,6 +6,8 @@ This file will contain reference links that in some way are useful for understan
 
 * [Por qué tenemos 12 notas musicales. Música y matemáticas](https://www.youtube.com/watch?v=P7iC-fbdKmQ). In Spanish, great to understand the maths beneath music. 
 * [Listen by numbers. Musica and maths](https://www.theguardian.com/music/2011/jun/27/music-mathematics-fibonacci). Not so visual as the previous one, but still an interesnting article. 
+* [Ultimate Guitar, to get chords](https://www.ultimate-guitar.com/)
+
 
 ## TDD and notebooks
 
@@ -39,3 +41,7 @@ This file will contain reference links that in some way are useful for understan
 * [Plugins for chords detection](https://musescore.org/en/node/263921)
 * [Several music libraries](https://wiki.python.org/moin/PythonInMusic)
 * [PyChoReLib](http://chordrecognizer.sourceforge.net/) - Python Chord Recognition Library. This is a library that implements the transformation from a list of notenames to a chord name. The system can be taught new chords by example: tell it that ['c', 'e', 'g'] is called a 'C' chord, and using its built-in music knowledge it immediately recognizes all major triads in all keys and all inversions/permutations. Comes with a real-time midi-input demo program (needs PyPortMidi).
+
+## Papers
+
+* [CHORD DETECTION USING DEEP LEARNING](CHORD DETECTION USING DEEP LEARNING)
