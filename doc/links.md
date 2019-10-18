@@ -34,6 +34,8 @@ This file will contain reference links that in some way are useful for understan
 * [More about zsh plugins](https://hackernoon.com/oh-my-zsh-made-for-cli-lovers-bea538d42ec1)
 * [Zsh Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions). Zsh Plugin to show auto suggestion based on history. 
 
-## Music Analisis
+## Music Libraries
 
 * [Plugins for chords detection](https://musescore.org/en/node/263921)
+* [Several music libraries](https://wiki.python.org/moin/PythonInMusic)
+* [PyChoReLib](http://chordrecognizer.sourceforge.net/) - Python Chord Recognition Library. This is a library that implements the transformation from a list of notenames to a chord name. The system can be taught new chords by example: tell it that ['c', 'e', 'g'] is called a 'C' chord, and using its built-in music knowledge it immediately recognizes all major triads in all keys and all inversions/permutations. Comes with a real-time midi-input demo program (needs PyPortMidi).
