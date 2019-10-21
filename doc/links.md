@@ -49,3 +49,7 @@ This file will contain reference links that in some way are useful for understan
 ## TO-BE-SORTED
 * https://musiclab.chromeexperiments.com/About
 * https://www.google.com/search?q=chord+prediction+machine+learning&oq=chord&aqs=chrome.0.69i59l2j69i57j69i60l3.6845j0j7&sourceid=chrome&ie=UTF-8
+
+## Scraping
+
+* [Selenium + BeauditulSoup for WebScraping](https://medium.com/ymedialabs-innovation/web-scraping-using-beautiful-soup-and-selenium-for-dynamic-page-2f8ad15efe25)
