@@ -50,7 +50,9 @@ This file will contain reference links that in some way are useful for understan
 * https://musiclab.chromeexperiments.com/About
 * https://www.google.com/search?q=chord+prediction+machine+learning&oq=chord&aqs=chrome.0.69i59l2j69i57j69i60l3.6845j0j7&sourceid=chrome&ie=UTF-8
 * https://medium.com/@_init_/how-self-attention-with-relative-position-representations-works-28173b8c245a
+* [The Unreasonable Effectiveness of Method Chaining in Pandas, por Adiamaan Keerthi](https://link.medium.com/uUK0Md9ur1) 
 
 ## Scraping
 
 * [Selenium + BeauditulSoup for WebScraping](https://medium.com/ymedialabs-innovation/web-scraping-using-beautiful-soup-and-selenium-for-dynamic-page-2f8ad15efe25)
+
