@@ -55,4 +55,5 @@ This file will contain reference links that in some way are useful for understan
 ## Scraping
 
 * [Selenium + BeauditulSoup for WebScraping](https://medium.com/ymedialabs-innovation/web-scraping-using-beautiful-soup-and-selenium-for-dynamic-page-2f8ad15efe25)
+* [Amazon EC2 for scraping](https://medium.com/@raoshashank/free-cloud-based-data-scraping-using-aws-e111a950e6b5)
 
