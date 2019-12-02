@@ -61,3 +61,7 @@ This file will contain reference links that in some way are useful for understan
 
 * [Different ways to create pandas dataframe](https://www.geeksforgeeks.org/different-ways-to-create-pandas-dataframe/)
 
+## Python
+
+* [How to upload your package to pypi](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
+* [The Why, When, and How of Using Python Multi-threading and Multi-Processing](https://medium.com/towards-artificial-intelligence/the-why-when-and-how-of-using-python-multi-threading-and-multi-processing-afd1b8a8ecca)
