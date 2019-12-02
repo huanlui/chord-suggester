@@ -58,6 +58,7 @@ This file will contain reference links that in some way are useful for understan
 * [Amazon EC2 for scraping](https://medium.com/@raoshashank/free-cloud-based-data-scraping-using-aws-e111a950e6b5)
 * [Selenium and proxies](https://stackoverflow.com/questions/17082425/running-selenium-webdriver-with-a-proxy-in-python)
 * [Tips for scraping](https://blog.hartleybrody.com/web-scraping-proxies/)
+* [ScraperAPI](https://www.scraperapi.com/dashboard)
 
 ## Pandas
 
