@@ -18,6 +18,20 @@ class ChordDatasetCleaner:
         final = pd.concat([with_chords, with_chords_filled])
         
         return final
+    
+    def merge_datasets(self,df1,df2):
+        df = pd.concat([df1, df2]) 
+        df = (df
+          .groupby(['url', 'name', 'decade'])
+          .agg({'genre': self.genres, 'chords': self.chords, 'uuid':self.uuid }))
+
+        df = df.reset_index()
+
+        songs_without_chords = len(df[df['uuid'].isnull()])
+
+        print(f'[{len(df1)}]+[{len(df2)}]=[{len(df)}]. Songs wihtout chords: {songs_without_chords}')
+
+        return df
         
     def fill_songs_without_chords(self,without_chords, raw_html_output):
         song_data = SongData(df=without_chords)
@@ -36,7 +50,7 @@ class ChordDatasetCleaner:
     def genres(self,series):
         return series.str.cat(sep='%%')
 
-    def extract_single_not_null(self,series):
+    def chords(self,series):
         no_nulls = series[series.notnull()].unique()
 
         if len(no_nulls) > 1:
@@ -47,10 +61,12 @@ class ChordDatasetCleaner:
 
         return no_nulls[0]
 
-    def chords(self,series):
-        return self.extract_single_not_null(series)
-
     def uuid(self,series):
-        return self.extract_single_not_null(series)
+        no_nulls = series[series.notnull()].unique()
+
+        if len(no_nulls) == 0:
+            return None
+
+        return no_nulls[0]
         
     
