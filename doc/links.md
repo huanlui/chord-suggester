@@ -63,9 +63,10 @@ This file will contain reference links that in some way are useful for understan
 * [Tips for scraping](https://blog.hartleybrody.com/web-scraping-proxies/)
 * [ScraperAPI](https://www.scraperapi.com/dashboard)
 
-## Pandas
+## Pandas 
 
 * [Different ways to create pandas dataframe](https://www.geeksforgeeks.org/different-ways-to-create-pandas-dataframe/)
+* [Modin: Accelerating Your Pandas Functions by Changing One Line of Code](https://towardsdatascience.com/modin-accelerating-your-pandas-functions-by-changing-one-line-of-code-504c39b5ddbc)
 
 ## Python
 
@@ -80,3 +81,4 @@ This file will contain reference links that in some way are useful for understan
 
 * [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
 * [Building a Next Word Predictor in Tensorflow](https://towardsdatascience.com/building-a-next-word-predictor-in-tensorflow-e7e681d4f03f)
+* [LSTM, ¿qué son y cuándo se usan?](https://es.slideshare.net/PlainConcepts/lstm-qu-son-y-cundo-se-usan)
