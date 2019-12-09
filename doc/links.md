@@ -27,6 +27,8 @@ This file will contain reference links that in some way are useful for understan
 * [Python app that generates a Guitar Pro tab from a guitar audio file](https://github.com/Aturt2/music-sheet-generator). KSchool Data Science Master's thesis.
 * [Hands-On AI Part 20: Music Data Collection and Exploration](https://software.intel.com/en-us/articles/hands-on-ai-part-20-music-data-collection-and-exploration). By Intel AI Developer Program. It demostrates the use of music21 library. 
 * [MIDI Music Data Extraction using Music21 and Word2Vec on Kaggle](https://towardsdatascience.com/midi-music-data-extraction-using-music21-and-word2vec-on-kaggle-cb383261cd4e)
+* [Classical Piano Composer](https://github.com/Skuldur/Classical-Piano-Composer)
+* [How to Generate Music using a LSTM Neural Network in Keras](https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5)
 
 ## Using MAC 
 
@@ -51,6 +53,7 @@ This file will contain reference links that in some way are useful for understan
 * https://www.google.com/search?q=chord+prediction+machine+learning&oq=chord&aqs=chrome.0.69i59l2j69i57j69i60l3.6845j0j7&sourceid=chrome&ie=UTF-8
 * https://medium.com/@_init_/how-self-attention-with-relative-position-representations-works-28173b8c245a
 * [The Unreasonable Effectiveness of Method Chaining in Pandas, por Adiamaan Keerthi](https://link.medium.com/uUK0Md9ur1) 
+* [Levenshtein distance between list of numbers](https://stackoverflow.com/questions/56597964/levenshtein-distance-between-list-of-number)
 
 ## Scraping
 
@@ -68,3 +71,12 @@ This file will contain reference links that in some way are useful for understan
 
 * [How to upload your package to pypi](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
 * [The Why, When, and How of Using Python Multi-threading and Multi-Processing](https://medium.com/towards-artificial-intelligence/the-why-when-and-how-of-using-python-multi-threading-and-multi-processing-afd1b8a8ecca)
+
+## Chords
+
+* [Chord names and symbols (popular music)](https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music))
+
+## LSTM/RRN
+
+* [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
+* [Building a Next Word Predictor in Tensorflow](https://towardsdatascience.com/building-a-next-word-predictor-in-tensorflow-e7e681d4f03f)
