@@ -29,6 +29,7 @@ This file will contain reference links that in some way are useful for understan
 * [MIDI Music Data Extraction using Music21 and Word2Vec on Kaggle](https://towardsdatascience.com/midi-music-data-extraction-using-music21-and-word2vec-on-kaggle-cb383261cd4e)
 * [Classical Piano Composer](https://github.com/Skuldur/Classical-Piano-Composer)
 * [How to Generate Music using a LSTM Neural Network in Keras](https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5)
+* [LSTM Realbook](https://keunwoochoi.wordpress.com/2016/02/19/lstm-realbook/). Very similar. 
 
 ## Using MAC 
 
@@ -82,3 +83,7 @@ This file will contain reference links that in some way are useful for understan
 * [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
 * [Building a Next Word Predictor in Tensorflow](https://towardsdatascience.com/building-a-next-word-predictor-in-tensorflow-e7e681d4f03f)
 * [LSTM, ¿qué son y cuándo se usan?](https://es.slideshare.net/PlainConcepts/lstm-qu-son-y-cundo-se-usan)
+* [Muy bueno](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+* [Activation functions](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
+* [How to Reshape Input Data for Long Short-Term Memory Networks in Keras](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/)
+* [Training an RNN with examples of different lengths in Keras](https://datascience.stackexchange.com/a/27879)
