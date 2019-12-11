@@ -89,3 +89,4 @@ This file will contain reference links that in some way are useful for understan
 * [How to Reshape Input Data for Long Short-Term Memory Networks in Keras](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/)
 * [Training an RNN with examples of different lengths in Keras](https://datascience.stackexchange.com/a/27879)
 * [Conditional RNN (Tensorflow)](https://github.com/philipperemy/cond_rnn). Very useful if you want to include non-time-dependal features into an LSTM
+* [How to convert column with list of values into rows in Pandas DataFrame](https://stackoverflow.com/questions/39954668/how-to-convert-column-with-list-of-values-into-rows-in-pandas-dataframe)
