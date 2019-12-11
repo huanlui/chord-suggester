@@ -83,7 +83,9 @@ This file will contain reference links that in some way are useful for understan
 * [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
 * [Building a Next Word Predictor in Tensorflow](https://towardsdatascience.com/building-a-next-word-predictor-in-tensorflow-e7e681d4f03f)
 * [LSTM, ¿qué son y cuándo se usan?](https://es.slideshare.net/PlainConcepts/lstm-qu-son-y-cundo-se-usan)
-* [Muy bueno](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+* [Nice post to understand LST](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+* [Another nice and longer post. With fukl tensorflow example](https://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 * [Activation functions](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
 * [How to Reshape Input Data for Long Short-Term Memory Networks in Keras](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/)
 * [Training an RNN with examples of different lengths in Keras](https://datascience.stackexchange.com/a/27879)
+* [Conditional RNN (Tensorflow)](https://github.com/philipperemy/cond_rnn). Very useful if you want to include non-time-dependal features into an LSTM
