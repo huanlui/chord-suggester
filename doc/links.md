@@ -90,3 +90,5 @@ This file will contain reference links that in some way are useful for understan
 * [Training an RNN with examples of different lengths in Keras](https://datascience.stackexchange.com/a/27879)
 * [Conditional RNN (Tensorflow)](https://github.com/philipperemy/cond_rnn). Very useful if you want to include non-time-dependal features into an LSTM
 * [How to convert column with list of values into rows in Pandas DataFrame](https://stackoverflow.com/questions/39954668/how-to-convert-column-with-list-of-values-into-rows-in-pandas-dataframe)
+* [How to Scale Data for Long Short-Term Memory Networks in Python](https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
+* [Why Data should be Normalized before Training a Neural Network](https://towardsdatascience.com/why-data-should-be-normalized-before-training-a-neural-network-c626b7f66c7d)
