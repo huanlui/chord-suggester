@@ -25,4 +25,13 @@ class Note:
             sin(angle_radians),
             cos(angle_radians)
         )
+    
+    def __sub__(self,other):
+        self_x_y = self.x_y_in_5th_circle
+        other_x_y = other.x_y_in_5th_circle
+
+        return (
+            self_x_y[0] - other_x_y[0],
+            self_x_y[1] - other_x_y[1],
+        )
 

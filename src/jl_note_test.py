@@ -65,3 +65,17 @@ def test_should_return_its_corresponding_x_y_in_5th_circle(note_str, expected_x_
 
     assert position[0] == approx(expected_x_y_in_5th_circle[0], rel=0.001)
     assert position[1] == approx(expected_x_y_in_5th_circle[1], rel=0.001)
+
+@pytest.mark.parametrize("note_str,note_2_str,expected_substraction", [
+    ("C","G",(-0.5,0.134)), 
+    ("G","C",(0.5,-0.134)), 
+    ("D","D#",(1.866,0.5)), 
+])
+def test_notes_can_be_substracted(note_str, note_2_str,expected_substraction ):
+    note =   Note(note_str)
+    note_2 = Note(note_2_str)
+
+    substraction = note - note_2
+
+    assert substraction[0] == approx(expected_substraction[0], rel=0.001)
+    assert substraction[1] == approx(expected_substraction[1], rel=0.001)
