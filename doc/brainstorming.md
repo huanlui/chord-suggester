@@ -27,3 +27,15 @@ Ver snnipters de https://github.com/huanlui/snippets.
 Usar Gatsby. Ver https://github.com/huanlui/gatsby-cloud-spike u otras herramientas más flexibles:
 
 https://es.reactjs.org/docs/create-a-new-react-app.html#gatsby
+
+Cómo meter features ctes por batch, década, género.
+
+Como codificar género. O 21 features independientemente o one shot encoding teniendo en cuenta las repetidas como nuevos géneros
+
+Como estadística, la complejidad de un acorde se puede medir usando el círculo de quitas 
+
+Lq nota fundamental del acorde tendrá que ser una variable circular 
+
+La nota del bajo podría ser la distancia en saltos dentro del círculo de quintas 
+
+Anonimizar datos antes de meterlos en sitios como public Tableau 
