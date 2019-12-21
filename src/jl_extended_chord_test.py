@@ -1,6 +1,7 @@
 import pytest
 from jl_extended_chord import ExtendedChord
 from pychord_jl import Chord
+from jl_note import Note
 
 @pytest.mark.parametrize("input_chord,expected_str_representation", [
     ("C","C"), 
@@ -11,3 +12,15 @@ def test_should_have_the_same_str_representration_as_pychord(input_chord, expect
     chord = ExtendedChord(Chord(input_chord))
 
     assert chord.__str__() == expected_str_representation
+
+
+@pytest.mark.parametrize("input_chord, expected_root", [
+    ("C", "C"), 
+    ("Dmaj","D"), 
+    ("F#7","F#"),
+])
+def test_should_return_root_as_a_jl_note(input_chord, expected_root):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert isinstance( chord.root, Note)
+    assert str(chord.root) == expected_root
