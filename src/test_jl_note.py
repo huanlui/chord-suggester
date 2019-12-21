@@ -26,5 +26,3 @@ def test_should_store_its_corresponding_position_in_5th_circle(note_str, expecte
     note = Note(note_str)
 
     assert note.position_in_5th_circle == expected_position_in_5th_circle
-
-def test_should 
