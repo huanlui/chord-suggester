@@ -15,6 +15,19 @@ def test_should_store_its_corresponding_pychord_value(note_str, expected_pychord
 
     assert note.pychord_value == expected_pychord_value
 
+@pytest.mark.parametrize("note_str", [
+    ("C"), 
+    ("G"),
+    ("D"),
+    ("C#"),
+    ("Db"),
+    ("F#"),
+])
+def test_should_have_a_string_representation(note_str):
+    note = Note(note_str)
+
+    assert str(note) == note_str
+
 @pytest.mark.parametrize("note_str,expected_position_in_5th_circle", [
     ("C",0), 
     ("G",1),

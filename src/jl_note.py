@@ -35,3 +35,6 @@ class Note:
             self_x_y[1] - other_x_y[1],
         )
 
+    def __str__(self):
+        return self.str_value
+
