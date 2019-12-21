@@ -78,6 +78,7 @@ This file will contain reference links that in some way are useful for understan
 ## Chords
 
 * [Chord names and symbols (popular music)](https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music))
+* [Slash Chords](https://en.wikipedia.org/wiki/Slash_chord)
 
 ## LSTM/RRN
 
