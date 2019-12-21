@@ -13,6 +13,10 @@ class ExtendedChord:
         return Note(self.pytest_chord.root)
 
     @property
+    def slash_bass(self):
+        return Note(self.pytest_chord.on)
+
+    @property
     def relative_on(self):
         diff = NOTE_VAL_DICT[self.pytest_chord.on] - NOTE_VAL_DICT[self.pytest_chord.root]
 
