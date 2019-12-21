@@ -22,7 +22,7 @@ class ExtendedChord:
 
     @property
     def slash_bass(self):
-        return Note(self.pytest_chord.on)
+        return Note(self.pytest_chord.on or self.pytest_chord.root)
 
     @property
     def relative_on(self):

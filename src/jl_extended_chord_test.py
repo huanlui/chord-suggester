@@ -45,6 +45,7 @@ def test_should_return_root_y(input_chord, expected_root_y):
     assert chord.root_y == approx(expected_root_y, 0.001)
 
 @pytest.mark.parametrize("input_chord, expected_slash_bass", [
+     ("C", "C"), 
     ("C/D", "D"), 
     ("Dmaj/F","F"), 
     ("F#7/A","A"),
@@ -54,5 +55,4 @@ def test_should_return_slash_bass_as_a_jl_note(input_chord, expected_slash_bass)
 
     assert isinstance(chord.slash_bass, Note)
     assert str(chord.slash_bass) == expected_slash_bass
-
 
