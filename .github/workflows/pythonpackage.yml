@@ -27,9 +27,9 @@ jobs:
         pip install pytest-html
         pytest --html=src/test_results.html
     - name: Upload artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          # Artifact name
-          name: test_results.html
-          # Directory containing files to upload
-          path: ./src
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: test_results.html
+        # Directory containing files to upload
+        path: ./src
