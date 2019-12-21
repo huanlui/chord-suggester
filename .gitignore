@@ -1,4 +1,6 @@
 .ipynb_checkpoints/
 __pycache__/
 data/private/
+.pytest_cache/
+.vscode/
 
