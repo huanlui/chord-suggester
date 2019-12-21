@@ -3,4 +3,5 @@ __pycache__/
 data/private/
 .pytest_cache/
 .vscode/
-
+data/chords*
+data/raw_html/
