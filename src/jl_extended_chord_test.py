@@ -2,6 +2,7 @@ import pytest
 from jl_extended_chord import ExtendedChord
 from pychord_jl import Chord
 from jl_note import Note
+from pytest import approx
 
 @pytest.mark.parametrize("input_chord,expected_str_representation", [
     ("C","C"), 
@@ -25,6 +26,24 @@ def test_should_return_root_as_a_jl_note(input_chord, expected_root):
     assert isinstance( chord.root, Note)
     assert str(chord.root) == expected_root
 
+@pytest.mark.parametrize("input_chord, expected_root_x", [
+    ("C",0.0), 
+    ("A",1.0), 
+])
+def test_should_return_root_x(input_chord, expected_root_x):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.root_x == approx(expected_root_x, 0.001)
+
+@pytest.mark.parametrize("input_chord, expected_root_y", [
+    ("C",1.0), 
+    ("A",0.0), 
+])
+def test_should_return_root_y(input_chord, expected_root_y):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.root_y == approx(expected_root_y, 0.001)
+
 @pytest.mark.parametrize("input_chord, expected_slash_bass", [
     ("C/D", "D"), 
     ("Dmaj/F","F"), 
@@ -35,3 +54,5 @@ def test_should_return_slash_bass_as_a_jl_note(input_chord, expected_slash_bass)
 
     assert isinstance(chord.slash_bass, Note)
     assert str(chord.slash_bass) == expected_slash_bass
+
+

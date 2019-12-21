@@ -13,6 +13,14 @@ class ExtendedChord:
         return Note(self.pytest_chord.root)
 
     @property
+    def root_x(self):
+        return Note(self.pytest_chord.root).x_y_in_5th_circle[0]
+
+    @property
+    def root_y(self):
+        return Note(self.pytest_chord.root).x_y_in_5th_circle[1]
+
+    @property
     def slash_bass(self):
         return Note(self.pytest_chord.on)
 
