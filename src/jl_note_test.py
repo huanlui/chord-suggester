@@ -10,7 +10,7 @@ from pytest import approx
     ("Db",1),
     ("F#",6),
 ])
-def test_should_store_its_corresponding_pychord_value(note_str, expected_pychord_value):
+def test_stores_its_corresponding_pychord_value(note_str, expected_pychord_value):
     note = Note(note_str)
 
     assert note.pychord_value == expected_pychord_value
@@ -23,7 +23,7 @@ def test_should_store_its_corresponding_pychord_value(note_str, expected_pychord
     ("Db"),
     ("F#"),
 ])
-def test_should_have_a_string_representation(note_str):
+def test_has_a_string_representation(note_str):
     note = Note(note_str)
 
     assert str(note) == note_str
@@ -37,7 +37,7 @@ def test_should_have_a_string_representation(note_str):
     ("F#",6),
     ("F",11),
 ])
-def test_should_return_its_corresponding_position_in_5th_circle(note_str, expected_position_in_5th_circle):
+def test_returns_its_corresponding_position_in_5th_circle(note_str, expected_position_in_5th_circle):
     note = Note(note_str)
 
     assert note.position_in_5th_circle == expected_position_in_5th_circle
@@ -51,7 +51,7 @@ def test_should_return_its_corresponding_position_in_5th_circle(note_str, expect
     ("F#",180),
     ("F",330),
 ])
-def test_should_return_its_corresponding_angle_in_5th_circle(note_str, expected_angle_in_5th_circle):
+def test_returns_its_corresponding_angle_in_5th_circle(note_str, expected_angle_in_5th_circle):
     note = Note(note_str)
 
     assert note.angle_in_5th_circle_degrees == expected_angle_in_5th_circle
@@ -71,7 +71,7 @@ def test_should_return_its_corresponding_angle_in_5th_circle(note_str, expected_
     ("A#",(-0.866,0.5)),
     ("F",(-0.5,0.866)), 
 ])
-def test_should_return_its_corresponding_x_y_in_5th_circle(note_str, expected_x_y_in_5th_circle):
+def test_returns_its_corresponding_x_y_in_5th_circle(note_str, expected_x_y_in_5th_circle):
     note = Note(note_str)
 
     position = note.x_y_in_5th_circle
@@ -84,7 +84,7 @@ def test_should_return_its_corresponding_x_y_in_5th_circle(note_str, expected_x_
     ("G","C",(0.5,-0.134)), 
     ("D","D#",(1.866,0.5)), 
 ])
-def test_notes_can_be_substracted(note_str, note_2_str,expected_substraction ):
+def test_can_be_substracted(note_str, note_2_str,expected_substraction ):
     note =   Note(note_str)
     note_2 = Note(note_2_str)
 
@@ -101,7 +101,7 @@ def test_notes_can_be_substracted(note_str, note_2_str,expected_substraction ):
     ("B","Cb"),
     ("B#","C"),
 ])
-def test_should_detect_notes_that_are_equal(note_str, note_str_2):
+def test_notes_that_are_equal_are_detected(note_str, note_str_2):
     note = Note(note_str)
     note2 = Note(note_str_2)
     assert note == note2
@@ -114,7 +114,7 @@ def test_should_detect_notes_that_are_equal(note_str, note_str_2):
     ("B","C"),
     ("B#","A"),
 ])
-def test_should_detect_notes_that_are_different(note_str, note_str_2):
+def test_notes_that_are_different_are_detected(note_str, note_str_2):
     note = Note(note_str)
     note2 = Note(note_str_2)
     assert note != note2
