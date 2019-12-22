@@ -1,4 +1,3 @@
-import pandas as pd
 from jl_chord_parser import ChordParser
 from jl_extended_chord import ChordMode
 
