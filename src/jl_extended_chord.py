@@ -1,7 +1,16 @@
 from pychord_jl.constants.scales import NOTE_VAL_DICT
 from jl_note import Note
+from enum import Enum
+
+class ChordMode(Enum):
+    Neutral = 0
+    Major = 1
+    Minor = 2
+
 class ExtendedChord:
     NUMBER_OF_SEMITONES = 12 
+    MAJOR_INTERVAL = 4
+    MINOR_INTERVAL = 3
     def __init__(self,pytest_chord):
         self.pytest_chord = pytest_chord
 
@@ -11,6 +20,14 @@ class ExtendedChord:
     @property
     def root(self):
         return Note(self.pytest_chord.root)
+
+    @property
+    def mode(self):
+        components = self.pytest_chord.quality.components
+        if self.MAJOR_INTERVAL in components: return ChordMode.Major
+        if self.MINOR_INTERVAL in components: return ChordMode.Minor
+
+        return ChordMode.Neutral
 
     @property
     def root_x(self):
@@ -41,3 +58,4 @@ class ExtendedChord:
     @property
     def relative_slash_y(self):
         return self.relative_slash_bass[1]
+

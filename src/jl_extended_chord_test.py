@@ -1,5 +1,5 @@
 import pytest
-from jl_extended_chord import ExtendedChord
+from jl_extended_chord import ExtendedChord, ChordMode
 from pychord_jl import Chord
 from jl_note import Note
 from pytest import approx
@@ -73,3 +73,16 @@ def test_should_relative_y_of_slash_respecting_the_root(input_chord, expected_re
     chord = ExtendedChord(Chord(input_chord))
 
     assert chord.relative_slash_y == approx(expected_relative_slash_y, 0.001)
+
+@pytest.mark.parametrize("input_chord, expected_mode", [
+    ("C",ChordMode.Major), 
+    ("C/F#",ChordMode.Major), 
+    ("Em",ChordMode.Minor),
+    ("Fm7",ChordMode.Minor),
+    ("D5",ChordMode.Neutral),
+])
+def test_should_detect_mode_of_the_chord(input_chord, expected_mode):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.mode == expected_mode
+
