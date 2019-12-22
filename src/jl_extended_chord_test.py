@@ -14,17 +14,17 @@ def test_should_have_the_same_str_representration_as_pychord(input_chord, expect
 
     assert chord.__str__() == expected_str_representation
 
-
-@pytest.mark.parametrize("input_chord, expected_root", [
-    ("C", "C"), 
-    ("Dmaj","D"), 
-    ("F#7","F#"),
+@pytest.mark.parametrize("input_chord, expected_mode", [
+    ("C",ChordMode.Major), 
+    ("C/F#",ChordMode.Major), 
+    ("Em",ChordMode.Minor),
+    ("Fm7",ChordMode.Minor),
+    ("D5",ChordMode.Neutral),
 ])
-def test_should_return_root_as_a_jl_note(input_chord, expected_root):
+def test_should_detect_mode_of_the_chord(input_chord, expected_mode):
     chord = ExtendedChord(Chord(input_chord))
 
-    assert isinstance( chord.root, Note)
-    assert str(chord.root) == expected_root
+    assert chord.mode == expected_mode
 
 @pytest.mark.parametrize("input_chord, expected_root_x", [
     ("C",0.0), 
@@ -43,6 +43,17 @@ def test_should_return_root_y(input_chord, expected_root_y):
     chord = ExtendedChord(Chord(input_chord))
 
     assert chord.root_y == approx(expected_root_y, 0.001)
+
+@pytest.mark.parametrize("input_chord, expected_root", [
+    ("C", "C"), 
+    ("Dmaj","D"), 
+    ("F#7","F#"),
+])
+def test_should_return_root_as_a_jl_note(input_chord, expected_root):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert isinstance( chord.root, Note)
+    assert str(chord.root) == expected_root
 
 @pytest.mark.parametrize("input_chord, expected_slash_bass", [
     ("C", "C"), 
@@ -74,15 +85,5 @@ def test_should_relative_y_of_slash_respecting_the_root(input_chord, expected_re
 
     assert chord.relative_slash_y == approx(expected_relative_slash_y, 0.001)
 
-@pytest.mark.parametrize("input_chord, expected_mode", [
-    ("C",ChordMode.Major), 
-    ("C/F#",ChordMode.Major), 
-    ("Em",ChordMode.Minor),
-    ("Fm7",ChordMode.Minor),
-    ("D5",ChordMode.Neutral),
-])
-def test_should_detect_mode_of_the_chord(input_chord, expected_mode):
-    chord = ExtendedChord(Chord(input_chord))
 
-    assert chord.mode == expected_mode
 
