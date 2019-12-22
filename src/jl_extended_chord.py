@@ -30,3 +30,14 @@ class ExtendedChord:
 
         return diff if diff > 0 else self.NUMBER_OF_SEMITONES + diff
 
+    @property
+    def relative_slash_bass(self):
+        return self.slash_bass - self.root
+
+    @property
+    def relative_slash_x(self):
+        return self.relative_slash_bass[0]
+
+    @property
+    def relative_slash_y(self):
+        return self.relative_slash_bass[1]
