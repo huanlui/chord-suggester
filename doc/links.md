@@ -7,6 +7,7 @@ This file will contain reference links that in some way are useful for understan
 * [Por qué tenemos 12 notas musicales. Música y matemáticas](https://www.youtube.com/watch?v=P7iC-fbdKmQ). In Spanish, great to understand the maths beneath music. 
 * [Listen by numbers. Musica and maths](https://www.theguardian.com/music/2011/jun/27/music-mathematics-fibonacci). Not so visual as the previous one, but still an interesnting article. 
 * [Ultimate Guitar, to get chords](https://www.ultimate-guitar.com/)
+* [Physics of Music: Just vs Equal Temperament ](https://pages.mtu.edu/~suits/scales.html). Page that can be helpful to define distance between notes inside a chord. 
 
 
 ## TDD and notebooks
@@ -94,3 +95,4 @@ This file will contain reference links that in some way are useful for understan
 * [How to convert column with list of values into rows in Pandas DataFrame](https://stackoverflow.com/questions/39954668/how-to-convert-column-with-list-of-values-into-rows-in-pandas-dataframe)
 * [How to Scale Data for Long Short-Term Memory Networks in Python](https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
 * [Why Data should be Normalized before Training a Neural Network](https://towardsdatascience.com/why-data-should-be-normalized-before-training-a-neural-network-c626b7f66c7d)
+* [Undertanding Feature Engineering](https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b)
