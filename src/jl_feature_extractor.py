@@ -16,3 +16,6 @@ class FeatureExtractor:
         raw_artist = self.extract_raw_artist(url)
         raw_artist = raw_artist.replace('-','_')
         return " ".join([word.capitalize() for word in raw_artist.split('_')])
+
+    def extract_numeric_decade(self,input):
+        return int(input.replace('s',''))
