@@ -1,5 +1,6 @@
 import pytest
 from jl_feature_extractor import FeatureExtractor
+from jl_extended_chord import ChordMode
 
 @pytest.mark.parametrize("raw_url,expected_artist", [
     ("https://tabs.ultimate-guitar.com/tab/1055161","Unknown"), 
@@ -56,3 +57,18 @@ def test_extracts_unique_cardinality(chords, expected_unique_cardinality):
     unique_cardinality = extractor.extract_unique_cardinality(chords)
 
     assert unique_cardinality == expected_unique_cardinality
+
+@pytest.mark.parametrize("chords,mode,expected_mode_cardinality", [
+    (["C#", "Em", "E", "F", "C#m", "C#", "C5"], ChordMode.Major, 4),
+    (["C#", "Em", "E", "F", "C#m", "C#", "C5"], ChordMode.Minor, 2),
+    (["C#", "Em", "E", "F", "C#m", "C#", "C5"], ChordMode.Neutral, 1),
+    (["C#m", "E7", "Em", "Gm", "CbM7", "D5", "C5"],ChordMode.Major,2),
+    (["C#m", "E7", "Em", "Gm", "CbM7", "D5", "C5"],ChordMode.Minor,3),
+    (["C#m", "E7", "Em", "Gm", "CbM7", "D5", "C5"],ChordMode.Neutral,2),
+])
+def test_extracts_mode_cardinality(chords,mode, expected_mode_cardinality):
+    extractor = FeatureExtractor()
+
+    mode_cardinality = extractor.extract_mode_cardinality(chords, mode)
+
+    assert mode_cardinality == expected_mode_cardinality 

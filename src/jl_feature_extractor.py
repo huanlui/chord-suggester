@@ -1,4 +1,6 @@
 import pandas as pd
+from jl_chord_parser import ChordParser
+from jl_extended_chord import ChordMode
 
 class FeatureExtractor:
     def extract_raw_artist(self,url):
@@ -25,3 +27,9 @@ class FeatureExtractor:
 
     def extract_unique_cardinality(self,chords):
         return len(set(chords))
+
+    def extract_mode_cardinality(self,chords,mode):
+        parser = ChordParser()
+        extended_chords = [parser.parse(chord) for chord in chords]
+
+        return len([chord for chord in extended_chords if chord.mode == mode ])
