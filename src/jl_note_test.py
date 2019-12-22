@@ -92,3 +92,45 @@ def test_notes_can_be_substracted(note_str, note_2_str,expected_substraction ):
 
     assert substraction[0] == approx(expected_substraction[0], rel=0.001)
     assert substraction[1] == approx(expected_substraction[1], rel=0.001)
+
+@pytest.mark.parametrize("note_str,note_str_2", [
+    ("C","C"), 
+    ("G","G"),
+    ("E","Fb"),
+    ("E#","F"),
+    ("B","Cb"),
+    ("B#","C"),
+])
+def test_should_detect_notes_that_are_equal(note_str, note_str_2):
+    note = Note(note_str)
+    note2 = Note(note_str_2)
+    assert note == note2
+
+@pytest.mark.parametrize("note_str,note_str_2", [
+    ("C","C#"), 
+    ("G","A"),
+    ("E","F"),
+    ("E#","E"),
+    ("B","C"),
+    ("B#","A"),
+])
+def test_should_detect_notes_that_are_different(note_str, note_str_2):
+    note = Note(note_str)
+    note2 = Note(note_str_2)
+    assert note != note2
+
+@pytest.mark.parametrize("note_str,expected_relative_major", [
+    ("C","Eb"), 
+    ("G","Bb"),
+    ("D","F"),
+    ("C#","E"),
+    ("Db","Fb"),
+    ("F#","A"),
+    ("B","D"),
+])
+def test_the_relative_major_is_3_semitones_above(note_str, expected_relative_major):
+    note = Note(note_str)
+
+    relative_major = note.relative_major
+
+    assert relative_major == Note(expected_relative_major)
