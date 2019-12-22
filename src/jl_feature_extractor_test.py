@@ -29,3 +29,16 @@ def test_extracts_numeric_from_string_decade(input, expected_decade_as_number):
     numeric_decade = extractor.extract_numeric_decade(input)
 
     assert numeric_decade == expected_decade_as_number
+
+@pytest.mark.parametrize("chords,expected_cardinality", [
+    (["C#"],1), 
+    (["C#", "D"],2), 
+    (["C#", "E", "E"],3), 
+    ([],0), 
+])
+def test_extracts_cardinality(chords, expected_cardinality):
+    extractor = FeatureExtractor()
+
+    cardinality = extractor.extract_cardinality(chords)
+
+    assert cardinality == expected_cardinality

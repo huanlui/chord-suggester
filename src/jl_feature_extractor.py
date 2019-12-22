@@ -19,3 +19,6 @@ class FeatureExtractor:
 
     def extract_numeric_decade(self,input):
         return int(input.replace('s',''))
+
+    def extract_cardinality(self,chords):
+        return len(chords)
