@@ -22,3 +22,6 @@ class FeatureExtractor:
 
     def extract_cardinality(self,chords):
         return len(chords)
+
+    def extract_unique_cardinality(self,chords):
+        return len(set(chords))

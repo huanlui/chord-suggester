@@ -42,3 +42,17 @@ def test_extracts_cardinality(chords, expected_cardinality):
     cardinality = extractor.extract_cardinality(chords)
 
     assert cardinality == expected_cardinality
+
+@pytest.mark.parametrize("chords,expected_unique_cardinality", [
+    (["C#"],1), 
+    (["C#", "D"],2), 
+    (["C#", "E", "E"],2), 
+    (["C#", "E", "E", "F", "C#m", "C#"],4),
+    ([],0), 
+])
+def test_extracts_unique_cardinality(chords, expected_unique_cardinality):
+    extractor = FeatureExtractor()
+
+    unique_cardinality = extractor.extract_unique_cardinality(chords)
+
+    assert unique_cardinality == expected_unique_cardinality
