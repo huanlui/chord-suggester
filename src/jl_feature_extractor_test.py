@@ -87,17 +87,3 @@ def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position)
     harmonic_mean_position = extractor.extract_harmonic_mean_position(chords)
 
     assert harmonic_mean_position == approx(expected_harmonic_mean_position,0.1)
-
-
-# @pytest.mark.parametrize("chords,expected_harmonic_width", [
-#     (["C", "G", "C", "F", "G", "C"], 2),
-#     (["Am", "E", "Am", "Dm", "E", "Am"], 5),
-#     (["C", "Am"], 0),
-#     (["D"], 0),
-# ])
-# def test_extract_(chords,mode, expected_mode_cardinality):
-#     extractor = FeatureExtractor()
-
-#     mode_cardinality = extractor.extract_mode_cardinality(chords, mode)
-
-#     assert mode_cardinality == expected_mode_cardinality
