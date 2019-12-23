@@ -44,6 +44,24 @@ def test_y_in_5th_circle_is_the_same_as_roo_for_major_chords (input_chord, expec
 
     assert chord.y_in_5th_circle == approx(expected_5th_circle_y, 0.001)
 
+@pytest.mark.parametrize("input_chord, expected_5th_circle_x", [
+    ("C5",0.0), 
+    ("A5",1.0), 
+])
+def test_x_in_5th_circle_is_the_same_as_roo_for_neutral_chords (input_chord, expected_5th_circle_x):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.x_in_5th_circle == approx(expected_5th_circle_x, 0.001)
+
+@pytest.mark.parametrize("input_chord, expected_5th_circle_y", [
+    ("C5",1.0), 
+    ("A5",0.0), 
+])
+def test_y_in_5th_circle_is_the_same_as_roo_for_neutral_chords (input_chord, expected_5th_circle_y):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.y_in_5th_circle == approx(expected_5th_circle_y, 0.001)
+
 @pytest.mark.parametrize("input_chord, expected_root", [
     ("C", "C"), 
     ("Dmaj","D"), 
