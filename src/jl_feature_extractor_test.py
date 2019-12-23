@@ -80,6 +80,8 @@ def test_extracts_mode_cardinality(chords,mode, expected_mode_cardinality):
      (['F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'C', 'C/G', 'C', 'C/G', 'Dm', 'Dm/C', 'G7/B', 'G7', 'Am', 'C/G', 'F', 'D9/F#', 'G', 'E7/G#', 'Am', 'Fm', 'F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'C', 'C/G', 'C', 'C/G', 'Dm', 'Dm/C', 'G7/B', 'G7', 'Am', 'C/G', 'F', 'D9/F#', 'G', 'E7/G#', 'Am', 'Fm', 'F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'Dm7/G', 'C', 'Dm7/G', 'C'], 11.94),
     (["C", "Am"], 0),
     (["D"], 2),
+    (["C", "G", "C", "F", "G", "C", "F#"], 0.2),
+     (["C", "G", "C", "F", "G", "C", "Db"], 0)
 ])
 def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position):
     extractor = FeatureExtractor()
@@ -87,3 +89,27 @@ def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position)
     harmonic_mean_position = extractor.extract_harmonic_mean_position(chords)
 
     assert harmonic_mean_position == approx(expected_harmonic_mean_position,0.1)
+
+@pytest.mark.parametrize("chords,expected_subdominant_width", [
+     (["C", "G", "C", "F", "G", "C", "F#"], 1.2),
+     (["C", "G", "C", "F", "G", "C", "Db"], 5.2),
+     (["C"], 0)
+])
+def test_extract_harmonic_subdominant_width(chords, expected_subdominant_width):
+    extractor = FeatureExtractor()
+
+    subdominant_width = extractor.extract_subdominant_width(chords)
+
+    assert subdominant_width == approx(expected_subdominant_width,0.1)
+
+@pytest.mark.parametrize("chords,expected_dominant_width", [
+     (["C", "G", "C", "F", "G", "C", "F#"], 5.8),
+     (["C", "G", "C", "F", "G", "C", "Db"], 1),
+     (["C"], 0)
+])
+def test_extract_harmonic_dominant_width(chords, expected_dominant_width):
+    extractor = FeatureExtractor()
+
+    dominant_width = extractor.extract_dominant_width(chords)
+
+    assert dominant_width == approx(expected_dominant_width,0.1)

@@ -2,6 +2,7 @@ from jl_chord_parser import ChordParser
 from jl_extended_chord import ChordMode
 import statistics 
 from math import atan2, pi
+import jl_constants as constants
 
 class FeatureExtractor:
     def __init__(self):
@@ -38,6 +39,7 @@ class FeatureExtractor:
         return len([chord for chord in extended_chords if chord.mode == mode ])
 
     def extract_harmonic_mean(self, chords): 
+        mean = lambda values: sum(values) / len(values)
         extended_chords = [self.parser.parse(chord) for chord in chords]
 
         x = [chord.x_in_5th_circle for chord in extended_chords]
@@ -56,12 +58,55 @@ class FeatureExtractor:
 
     def extract_harmonic_mean_position(self, chords):
         mean = self.extract_harmonic_mean(chords)
-
         angle = atan2(mean[0], mean[1])
 
         angle_degrees = angle * 180 / pi
 
+        if abs(angle_degrees) < 0.001:
+            angle_degrees = 0
+
         if angle_degrees < 0:
             angle_degrees = 360 + angle_degrees
 
-        return angle_degrees / 30
+
+        return angle_degrees / constants.STEP_ANGLE
+
+    def extract_subdominant_width(self, chords):
+        extended_chords = [self.parser.parse(chord) for chord in chords]
+
+        armonic_mean = self.extract_harmonic_mean_position(chords)
+        diffs = [substract_positions(armonic_mean,chord.note_in_5h_circle.position_in_5th_circle) \
+                   for chord in extended_chords]
+
+        diffs = [diff for diff in diffs if diff > 0] # onyly subdominant (positive difference)
+
+        return max(diffs) if len(diffs) > 0 else 0
+
+    def extract_dominant_width(self, chords):
+        extended_chords = [self.parser.parse(chord) for chord in chords]
+
+        armonic_mean = self.extract_harmonic_mean_position(chords)
+        diffs = [substract_positions(armonic_mean,chord.note_in_5h_circle.position_in_5th_circle) \
+                   for chord in extended_chords]
+
+        diffs = [diff for diff in diffs if diff < 0] # onyly dominant (positive difference)
+
+        return abs(min(diffs)) if len(diffs) > 0 else 0
+
+
+def substract_positions(position_1, position_2):
+    diff = position_1 - position_2
+
+    if abs(diff) > constants.NUMBER_OF_NOTES / 2:
+        if diff < 0: 
+            return diff + 12
+        else:
+            return diff - 12
+    
+    return diff
+
+
+
+
+        
+

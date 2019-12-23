@@ -1,9 +1,8 @@
 from pychord_jl.constants.scales import NOTE_VAL_DICT, VAL_NOTE_DICT
 from math import cos,sin,pi
+import jl_constants as constants
 
 class Note:
-    NUMBER_OF_NOTES = 12
-    STEP_ANGLE = 360.0 / NUMBER_OF_NOTES
     def __init__(self, str_value):
         self.str_value = str_value
         self.pychord_value = NOTE_VAL_DICT[str_value]
@@ -14,7 +13,7 @@ class Note:
 
     @property
     def angle_in_5th_circle_degrees(self):
-        return self.position_in_5th_circle * self.STEP_ANGLE
+        return self.position_in_5th_circle * constants.STEP_ANGLE
 
     # https://towardsdatascience.com/feature-engineering-time-3934038e0dbe
     @property
@@ -28,7 +27,7 @@ class Note:
 
     @property
     def relative_major(self):
-        relative_major_value = (self.pychord_value + 3) % self.NUMBER_OF_NOTES
+        relative_major_value = (self.pychord_value + 3) % constants.NUMBER_OF_NOTES
         return Note(VAL_NOTE_DICT[relative_major_value][0])
     
     def __sub__(self,other):
