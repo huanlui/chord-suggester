@@ -26,23 +26,23 @@ def test_detects_mode_of_the_chord(input_chord, expected_mode):
 
     assert chord.mode == expected_mode
 
-@pytest.mark.parametrize("input_chord, expected_root_x", [
+@pytest.mark.parametrize("input_chord, expected_5th_circle_x", [
     ("C",0.0), 
     ("A",1.0), 
 ])
-def test_returns_root_x(input_chord, expected_root_x):
+def test_x_in_5th_circle_is_the_same_as_roo_for_major_chords (input_chord, expected_5th_circle_x):
     chord = ExtendedChord(Chord(input_chord))
 
-    assert chord.root_x == approx(expected_root_x, 0.001)
+    assert chord.x_in_5th_circle == approx(expected_5th_circle_x, 0.001)
 
-@pytest.mark.parametrize("input_chord, expected_root_y", [
+@pytest.mark.parametrize("input_chord, expected_5th_circle_y", [
     ("C",1.0), 
     ("A",0.0), 
 ])
-def test_returns_root_y(input_chord, expected_root_y):
+def test_y_in_5th_circle_is_the_same_as_roo_for_major_chords (input_chord, expected_5th_circle_y):
     chord = ExtendedChord(Chord(input_chord))
 
-    assert chord.root_y == approx(expected_root_y, 0.001)
+    assert chord.y_in_5th_circle == approx(expected_5th_circle_y, 0.001)
 
 @pytest.mark.parametrize("input_chord, expected_root", [
     ("C", "C"), 

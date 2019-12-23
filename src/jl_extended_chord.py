@@ -30,11 +30,11 @@ class ExtendedChord:
         return ChordMode.Neutral
 
     @property
-    def root_x(self):
+    def x_in_5th_circle(self):
         return Note(self.pytest_chord.root).x_y_in_5th_circle[0]
 
     @property
-    def root_y(self):
+    def y_in_5th_circle(self):
         return Note(self.pytest_chord.root).x_y_in_5th_circle[1]
 
     @property
