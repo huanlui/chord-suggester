@@ -96,3 +96,7 @@ This file will contain reference links that in some way are useful for understan
 * [How to Scale Data for Long Short-Term Memory Networks in Python](https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
 * [Why Data should be Normalized before Training a Neural Network](https://towardsdatascience.com/why-data-should-be-normalized-before-training-a-neural-network-c626b7f66c7d)
 * [Undertanding Feature Engineering](https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b)
+
+## Feature Engineering
+* [Feature Engineering Time](https://towardsdatascience.com/feature-engineering-time-3934038e0dbe)
+* [Feature Engineering Time (Notebook)](https://colab.research.google.com/gist/avishalom/3264bd0544ff2a5d43c58093c11c0c56/average-circle.ipynb#scrollTo=A5zr9NmGeVi7)
