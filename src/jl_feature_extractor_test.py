@@ -1,6 +1,8 @@
 import pytest
+from pytest import approx
 from jl_feature_extractor import FeatureExtractor
 from jl_extended_chord import ChordMode
+from math import atan2, pi
 
 @pytest.mark.parametrize("raw_url,expected_artist", [
     ("https://tabs.ultimate-guitar.com/tab/1055161","Unknown"), 
@@ -72,3 +74,30 @@ def test_extracts_mode_cardinality(chords,mode, expected_mode_cardinality):
     mode_cardinality = extractor.extract_mode_cardinality(chords, mode)
 
     assert mode_cardinality == expected_mode_cardinality 
+
+@pytest.mark.parametrize("chords,expected_harmonic_mean_position", [
+    (["C", "G", "C", "F", "G", "C"], 0.17),
+     (['F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'C', 'C/G', 'C', 'C/G', 'Dm', 'Dm/C', 'G7/B', 'G7', 'Am', 'C/G', 'F', 'D9/F#', 'G', 'E7/G#', 'Am', 'Fm', 'F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'C', 'C/G', 'C', 'C/G', 'Dm', 'Dm/C', 'G7/B', 'G7', 'Am', 'C/G', 'F', 'D9/F#', 'G', 'E7/G#', 'Am', 'Fm', 'F#/G#', 'C#/G#', 'D#m/G#', 'C#/G#', 'F#/G#', 'C#/G#', 'G#m7', 'Am7', 'F', 'C', 'Em/B', 'D', 'F', 'Am/E', 'E', 'Dm', 'C', 'Dm7/G', 'C', 'Dm7/G', 'C', 'Dm7/G', 'C'], 11.94),
+    (["C", "Am"], 0),
+    (["D"], 2),
+])
+def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position):
+    extractor = FeatureExtractor()
+
+    harmonic_mean_position = extractor.extract_harmonic_mean_position(chords)
+
+    assert harmonic_mean_position == approx(expected_harmonic_mean_position,0.1)
+
+
+# @pytest.mark.parametrize("chords,expected_harmonic_width", [
+#     (["C", "G", "C", "F", "G", "C"], 2),
+#     (["Am", "E", "Am", "Dm", "E", "Am"], 5),
+#     (["C", "Am"], 0),
+#     (["D"], 0),
+# ])
+# def test_extract_(chords,mode, expected_mode_cardinality):
+#     extractor = FeatureExtractor()
+
+#     mode_cardinality = extractor.extract_mode_cardinality(chords, mode)
+
+#     assert mode_cardinality == expected_mode_cardinality

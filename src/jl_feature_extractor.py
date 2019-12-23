@@ -1,7 +1,12 @@
 from jl_chord_parser import ChordParser
 from jl_extended_chord import ChordMode
+import statistics 
+from math import atan2, pi
 
 class FeatureExtractor:
+    def __init__(self):
+        self.parser = ChordParser()
+
     def extract_raw_artist(self,url):
         plain_url = url.replace('https://tabs.ultimate-guitar.com/tab/','')
         splitted = plain_url.split('/')
@@ -28,7 +33,35 @@ class FeatureExtractor:
         return len(set(chords))
 
     def extract_mode_cardinality(self,chords,mode):
-        parser = ChordParser()
-        extended_chords = [parser.parse(chord) for chord in chords]
+        extended_chords = [self.parser.parse(chord) for chord in chords]
 
         return len([chord for chord in extended_chords if chord.mode == mode ])
+
+    def extract_harmonic_mean(self, chords): 
+        extended_chords = [self.parser.parse(chord) for chord in chords]
+
+        x = [chord.x_in_5th_circle for chord in extended_chords]
+        y = [chord.y_in_5th_circle for chord in extended_chords]
+
+        x_avg = statistics.mean(x)
+        y_avg = statistics.mean(y)
+
+        return (x_avg, y_avg)
+
+    def extract_harmonic_mean_x(self,chords):
+        return self.extract_harmonic_mean(chords)[0]
+
+    def extract_harmonic_mean_y(self,chords):
+        return self.extract_harmonic_mean(chords)[1]
+
+    def extract_harmonic_mean_position(self, chords):
+        mean = self.extract_harmonic_mean(chords)
+
+        angle = atan2(mean[0], mean[1])
+
+        angle_degrees = angle * 180 / pi
+
+        if angle_degrees < 0:
+            angle_degrees = 360 + angle_degrees
+
+        return angle_degrees / 30
