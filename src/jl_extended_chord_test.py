@@ -146,7 +146,7 @@ def test_returns_all_interval_combinations(input_chord, expected_intervals):
      ("Cdim",8),
     ("Caug",5)
 ])
-def test_returns_all_interval_combinations(input_chord, expected_complexity):
+def test_returns_complexity(input_chord, expected_complexity):
     chord = ExtendedChord(Chord(input_chord))
 
     assert chord.complexity == approx(expected_complexity, 0.01)
