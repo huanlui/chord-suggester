@@ -2,6 +2,7 @@ from pychord_jl.constants.scales import NOTE_VAL_DICT
 from jl_note import Note
 from enum import Enum
 import jl_constants as constants
+from jl_extended_interval import ExtendedInterval
 
 class ChordMode(Enum):
     Neutral = 0
@@ -9,19 +10,19 @@ class ChordMode(Enum):
     Minor = 2
 
 class ExtendedChord:
-    def __init__(self,pytest_chord):
-        self.pytest_chord = pytest_chord
+    def __init__(self,pychord_chord):
+        self.pychord_chord = pychord_chord
 
     def __str__(self):
-        return self.pytest_chord.__str__()
+        return self.pychord_chord.__str__()
 
     @property
     def root(self):
-        return Note(self.pytest_chord.root)
+        return Note(self.pychord_chord.root)
 
     @property
     def mode(self):
-        components = self.pytest_chord.quality.components
+        components = self.pychord_chord.quality.components
         if constants.MAJOR_INTERVAL in components: return ChordMode.Major
         if constants.MINOR_INTERVAL in components: return ChordMode.Minor
 
@@ -29,7 +30,7 @@ class ExtendedChord:
 
     @property 
     def note_in_5h_circle(self):
-        root_note = Note(self.pytest_chord.root)
+        root_note = Note(self.pychord_chord.root)
 
         return root_note if self.mode != ChordMode.Minor else root_note.relative_major
 
@@ -43,11 +44,11 @@ class ExtendedChord:
 
     @property
     def slash_bass(self):
-        return Note(self.pytest_chord.on or self.pytest_chord.root)
+        return Note(self.pychord_chord.on or self.pychord_chord.root)
 
     @property
     def relative_on(self):
-        diff = NOTE_VAL_DICT[self.pytest_chord.on] - NOTE_VAL_DICT[self.pytest_chord.root]
+        diff = NOTE_VAL_DICT[self.pychord_chord.on] - NOTE_VAL_DICT[self.pychord_chord.root]
 
         return diff if diff > 0 else constants.NUMBER_OF_SEMITONES + diff
 
@@ -62,4 +63,23 @@ class ExtendedChord:
     @property
     def relative_slash_y(self):
         return self.relative_slash_bass[1]
+
+    @property
+    def intervals(self):
+        components = self.pychord_chord.quality.components
+
+        intervals = []
+        for index, component in enumerate(components):
+            for index_2, component_2 in enumerate(components[index:]):
+                intervals = [*intervals, component_2 - component]
+
+        intervals = [interval if interval < 12 else interval -12 for interval in intervals if interval > 0]
+
+        return list(set(intervals))
+
+    @property
+    def complexity(self):
+        complexities = [ExtendedInterval(interval).complexity for interval in self.intervals]
+
+        return sum(complexities) / len(complexities)
 

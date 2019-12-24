@@ -121,5 +121,37 @@ def test_returns_relative_y_of_slash_respecting_the_root(input_chord, expected_r
 
     assert chord.relative_slash_y == approx(expected_relative_slash_y, 0.001)
 
+@pytest.mark.parametrize("input_chord, expected_intervals", [
+    ("C",[3,4,7]), 
+    ("C7",[3,4,6,7,10]), 
+])
+def test_returns_all_interval_combinations(input_chord, expected_intervals):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.intervals == expected_intervals
+
+@pytest.mark.parametrize("input_chord, expected_complexity", [
+     ("C",3.33), 
+     ("Cm",3.33), 
+     ("C7",5.6), 
+     ("Cm7",4.25), 
+     ("C9",6), 
+     ("Cm9",5.66), 
+     ("C9+11",6.375), 
+     ("Cm9+11",6.375), 
+     ("C13+11",5.6), 
+     ("Cm13+11",6), 
+     ("Cadd4",5),
+     ("Cadd2",4),
+     ("Cdim",8),
+    ("Caug",5)
+])
+def test_returns_all_interval_combinations(input_chord, expected_complexity):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.complexity == approx(expected_complexity, 0.01)
+
+
+
 
 

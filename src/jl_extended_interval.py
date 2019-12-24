@@ -1,4 +1,4 @@
-class Interval:
+class ExtendedInterval:
     COMPLEXITY_DICTIONARY = {
         0:0,
         1:10,
