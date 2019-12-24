@@ -147,18 +147,13 @@ def test_can_be_created_from_Music21_name(note_21_name, expected_pychord_value):
 
     assert pychord_value == expected_pychord_value
 
-@pytest.mark.parametrize("note_str,expected_complementary", [
-    ("C","C"), 
-    ("G",""),
-    ("D","F"),
-    ("C#","E"),
-    ("Db","Fb"),
-    ("F#","A"),
-    ("B","D"),
+@pytest.mark.parametrize("pychord_value, expected_note", [
+    (0, 'C'), 
+    (3, 'D#'),
+    (7, 'G'),
 ])
-def test_the_relative_major_is_3_semitones_above(note_str, expected_complementary):
-    note = Note(note_str)
+def test_can_be_created_from_pychord_value(pychord_value, expected_note):
+    note = Note.from_pychord_value(pychord_value)
 
-    relative_major = note.complementary
+    assert note == Note(expected_note)
 
-    assert relative_major == Note(expected_complementary)

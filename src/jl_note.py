@@ -11,6 +11,10 @@ class Note:
     def from_Music21_name(note_name):
         return Note(note_name[:-1])
 
+    @staticmethod
+    def from_pychord_value(pychord_value):
+        return Note(VAL_NOTE_DICT[pychord_value][0])
+
     @property
     def position_in_5th_circle(self):
         return (self.pychord_value * 7) % 12
