@@ -7,6 +7,10 @@ class Note:
         self.str_value = str_value
         self.pychord_value = NOTE_VAL_DICT[str_value]
 
+    @staticmethod
+    def from_Music21_name(note_name):
+        return Note(note_name[:-1])
+
     @property
     def position_in_5th_circle(self):
         return (self.pychord_value * 7) % 12
@@ -29,6 +33,10 @@ class Note:
     def relative_major(self):
         relative_major_value = (self.pychord_value + 3) % constants.NUMBER_OF_NOTES
         return Note(VAL_NOTE_DICT[relative_major_value][0])
+
+    @property
+    def complementary(self):
+        return None
     
     def __sub__(self,other):
         self_x_y = self.x_y_in_5th_circle

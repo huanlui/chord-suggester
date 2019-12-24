@@ -134,3 +134,31 @@ def test_the_relative_major_is_3_semitones_above(note_str, expected_relative_maj
     relative_major = note.relative_major
 
     assert relative_major == Note(expected_relative_major)
+
+@pytest.mark.parametrize("note_21_name, expected_pychord_value", [
+    ("C5", 0), 
+    ("Gb2", 6),
+    ("D3", 2),
+])
+def test_can_be_created_from_Music21_name(note_21_name, expected_pychord_value):
+    note = Note.from_Music21_name(note_21_name)
+
+    pychord_value = note.pychord_value
+
+    assert pychord_value == expected_pychord_value
+
+@pytest.mark.parametrize("note_str,expected_complementary", [
+    ("C","C"), 
+    ("G",""),
+    ("D","F"),
+    ("C#","E"),
+    ("Db","Fb"),
+    ("F#","A"),
+    ("B","D"),
+])
+def test_the_relative_major_is_3_semitones_above(note_str, expected_complementary):
+    note = Note(note_str)
+
+    relative_major = note.complementary
+
+    assert relative_major == Note(expected_complementary)
