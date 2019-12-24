@@ -93,6 +93,11 @@ class FeatureExtractor:
 
         return abs(min(diffs)) if len(diffs) > 0 else 0
 
+    def extract_complexity(self,chords): 
+        complexities = [self.parser.parse(chord).complexity for chord in chords]
+
+        return sum(complexities) / len(complexities)
+
 
 def substract_positions(position_1, position_2):
     diff = position_1 - position_2
@@ -104,6 +109,8 @@ def substract_positions(position_1, position_2):
             return diff - 12
     
     return diff
+
+
 
 
 

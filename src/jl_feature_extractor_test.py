@@ -113,3 +113,15 @@ def test_extract_harmonic_dominant_width(chords, expected_dominant_width):
     dominant_width = extractor.extract_dominant_width(chords)
 
     assert dominant_width == approx(expected_dominant_width,0.1)
+
+@pytest.mark.parametrize("chords,expected_complexity", [
+     (["C", "G", "F#"], 3.33),
+     (["C", "G7", "Cm"], 4.08),
+     (["C11", "C9+11"], 5.44)
+])
+def test_extract_complexity(chords, expected_complexity):
+    extractor = FeatureExtractor()
+
+    complexity = extractor.extract_complexity(chords)
+
+    assert complexity == approx(expected_complexity,0.1)
