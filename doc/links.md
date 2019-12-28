@@ -100,3 +100,13 @@ This file will contain reference links that in some way are useful for understan
 ## Feature Engineering
 * [Feature Engineering Time](https://towardsdatascience.com/feature-engineering-time-3934038e0dbe)
 * [Feature Engineering Time (Notebook)](https://colab.research.google.com/gist/avishalom/3264bd0544ff2a5d43c58093c11c0c56/average-circle.ipynb#scrollTo=A5zr9NmGeVi7)
+
+## Encoding
+
+* [A Beginner's Guide to Word2Vec and Neural Word Embeddings](https://pathmind.com/wiki/word2vec)
+* Manual. How to _revert_ manual embedding? [Cosine Similiary](https://pathmind.com/wiki/glossary#cosine).
+* https://datascience.stackexchange.com/questions/15149/output-a-word-instead-of-a-vector-after-word-embedding
+* [One-shot encoding](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+
+
+
