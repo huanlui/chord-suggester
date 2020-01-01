@@ -151,6 +151,29 @@ def test_returns_complexity(input_chord, expected_complexity):
 
     assert chord.complexity == approx(expected_complexity, 0.01)
 
+@pytest.mark.parametrize("input_chord, expected_components", [
+     ("C",[0,4,7]), 
+     ("C7",[0,4,7,10]), 
+     ("A",[9,1,4]), 
+     ("Am7",[9,0,4,7]), 
+])
+def test_returns_components(input_chord, expected_components):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.components == expected_components
+
+@pytest.mark.parametrize("input_chord, expected_note_vector", [
+     ("C",[1,0,0,0,1,0,0,1,0,0,0,0]), 
+     ("C7",[1,0,0,0,1,0,0,1,0,0,1,0]), 
+     ("A",[0,1,0,0,1,0,0,0,0,1,0,0]), 
+     ("Am7",[1,0,0,0,1,0,0,1,0,1,0,0]), 
+])
+def test_returns_note_vector(input_chord, expected_note_vector):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.note_vector == expected_note_vector
+
+
 
 
 

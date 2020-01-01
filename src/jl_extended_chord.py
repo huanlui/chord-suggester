@@ -85,3 +85,22 @@ class ExtendedChord:
 
         return sum(complexities) / len(complexities)
 
+    @property
+    def components(self):
+        components = self.pychord_chord.quality.components
+
+        root = NOTE_VAL_DICT[self.pychord_chord.root]
+
+        components = [(component + root) % constants.NUMBER_OF_NOTES for component in components]
+
+        return components
+
+    @property
+    def note_vector(self):
+        result = [0] * 12
+
+        for component in self.components:
+            result[component] = 1
+
+        return result
+
