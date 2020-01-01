@@ -98,6 +98,17 @@ class FeatureExtractor:
 
         return sum(complexities) / len(complexities)
 
+    def extract_relative_on_list(self, chords):
+        extended_chords = [self.parser.parse(chord) for chord in chords]
+
+        relatives = [chord.relative_on for chord in extended_chords]
+
+        relatives = [relative for relative in relatives if relative is not None]
+
+        return list(set(relatives))
+
+
+
 
 def substract_positions(position_1, position_2):
     diff = position_1 - position_2

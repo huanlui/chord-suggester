@@ -125,3 +125,15 @@ def test_extract_complexity(chords, expected_complexity):
     complexity = extractor.extract_complexity(chords)
 
     assert complexity == approx(expected_complexity,0.1)
+
+@pytest.mark.parametrize('chords, expected_relative_on_list', [
+    (['C/G', 'C/D', 'C/A', 'G/D', 'G/A'], [9,2,7]),
+     (['G/A', 'F#/G' ], [1,2]),
+     (['C', 'A'], [])
+])
+def test_extract_relative_on_list(chords, expected_relative_on_list):
+    extractor = FeatureExtractor()
+
+    relative_on_list = extractor.extract_relative_on_list(chords)
+
+    assert relative_on_list == expected_relative_on_list

@@ -48,9 +48,11 @@ class ExtendedChord:
 
     @property
     def relative_on(self):
+        if self.pychord_chord.on is None: return None
+
         diff = NOTE_VAL_DICT[self.pychord_chord.on] - NOTE_VAL_DICT[self.pychord_chord.root]
 
-        return diff if diff > 0 else constants.NUMBER_OF_SEMITONES + diff
+        return diff if diff >= 0 else constants.NUMBER_OF_SEMITONES + diff
 
     @property
     def relative_slash_bass(self):
