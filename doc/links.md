@@ -56,6 +56,7 @@ This file will contain reference links that in some way are useful for understan
 * https://medium.com/@_init_/how-self-attention-with-relative-position-representations-works-28173b8c245a
 * [The Unreasonable Effectiveness of Method Chaining in Pandas, por Adiamaan Keerthi](https://link.medium.com/uUK0Md9ur1) 
 * [Levenshtein distance between list of numbers](https://stackoverflow.com/questions/56597964/levenshtein-distance-between-list-of-number)
+* [Building a simple Keras + deep learning REST API](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html)
 
 ## Scraping
 
@@ -81,7 +82,7 @@ This file will contain reference links that in some way are useful for understan
 * [Chord names and symbols (popular music)](https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music))
 * [Slash Chords](https://en.wikipedia.org/wiki/Slash_chord)
 
-## LSTM/RRN
+## LSTM/RRN, Keras
 
 * [The fall of RNN / LSTM](https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0)
 * [Building a Next Word Predictor in Tensorflow](https://towardsdatascience.com/building-a-next-word-predictor-in-tensorflow-e7e681d4f03f)
@@ -97,6 +98,12 @@ This file will contain reference links that in some way are useful for understan
 * [Why Data should be Normalized before Training a Neural Network](https://towardsdatascience.com/why-data-should-be-normalized-before-training-a-neural-network-c626b7f66c7d)
 * [Undertanding Feature Engineering](https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b)
 * [Data Preparation for Variable Length Input Sequences](https://machinelearningmastery.com/data-preparation-variable-length-input-sequences-sequence-prediction/)
+* [Advanced Keras — Constructing Complex Custom Losses and Metrics](https://towardsdatascience.com/advanced-keras-constructing-complex-custom-losses-and-metrics-c07ca130a618)
+* [Keras: loss functions](https://keras.io/losses/)
+* [The 5 Step Life-Cycle for Long Short-Term Memory Models in Keras](https://machinelearningmastery.com/5-step-life-cycle-long-short-term-memory-models-keras/)
+* [A detailed example of how to use data generators with Keras](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly)
+* [LSTM Text Generation (Github)](https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py)
+* [Training an RNN with examples of different lengths in Keras](https://datascience.stackexchange.com/questions/26366/training-an-rnn-with-examples-of-different-lengths-in-keras)
 
 ## Feature Engineering
 * [Feature Engineering Time](https://towardsdatascience.com/feature-engineering-time-3934038e0dbe)
@@ -108,6 +115,8 @@ This file will contain reference links that in some way are useful for understan
 * Manual. How to _revert_ manual embedding? [Cosine Similiary](https://pathmind.com/wiki/glossary#cosine).
 * https://datascience.stackexchange.com/questions/15149/output-a-word-instead-of-a-vector-after-word-embedding
 * [One-shot encoding](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+
+
 
 
 
