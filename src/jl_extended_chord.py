@@ -1,8 +1,8 @@
-from pychord_jl.constants.scales import NOTE_VAL_DICT
 from jl_note import Note
 from enum import Enum
 import jl_constants as constants
 from jl_extended_interval import ExtendedInterval
+from jl_dictionaries import Dictionaries
 
 class ChordMode(Enum):
     Neutral = 0
@@ -50,7 +50,7 @@ class ExtendedChord:
     def relative_on(self):
         if self.pychord_chord.on is None: return None
 
-        diff = NOTE_VAL_DICT[self.pychord_chord.on] - NOTE_VAL_DICT[self.pychord_chord.root]
+        diff = Dictionaries.get_note_value(self.pychord_chord.on) - Dictionaries.get_note_value(self.pychord_chord.root)
 
         return diff if diff >= 0 else constants.NUMBER_OF_SEMITONES + diff
 
@@ -89,7 +89,7 @@ class ExtendedChord:
     def components(self):
         components = self.pychord_chord.quality.components
 
-        root = NOTE_VAL_DICT[self.pychord_chord.root]
+        root = Dictionaries.get_note_value(self.pychord_chord.root)
 
         components = [(component + root) % constants.NUMBER_OF_NOTES for component in components]
 
@@ -103,4 +103,15 @@ class ExtendedChord:
             result[component] = 1
 
         return result
+
+    @property
+    def standard_name(self):
+        standard_root = Dictionaries.get_note_name(Dictionaries.get_note_value(self.pychord_chord.root))
+
+        standard_quality = Dictionaries.get_quality_name(tuple(self.pychord_chord.quality.components))
+
+        return f'{standard_root}{standard_quality}'
+
+
+
 

@@ -173,6 +173,16 @@ def test_returns_note_vector(input_chord, expected_note_vector):
 
     assert chord.note_vector == expected_note_vector
 
+@pytest.mark.parametrize("input_chord, expected_standard_name", [
+     ("CM",'C'), 
+     ("G#maj",'Ab'), 
+      ("Ab(7)",'Ab7'), 
+])
+def test_returns_standard_name(input_chord, expected_standard_name):
+    chord = ExtendedChord(Chord(input_chord))
+
+    assert chord.standard_name == expected_standard_name
+
 
 
 
