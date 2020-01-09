@@ -75,6 +75,10 @@ class FeatureExtractor:
 
         return angle_degrees / constants.STEP_ANGLE
 
+    def extract_harmonic_mean_in_scale(self, harmonic_mean_in_5th_circle):
+
+        return (int(round(harmonic_mean_in_5th_circle)) * 7) % 12     
+
     def extract_subdominant_width(self, extended_chords):
         armonic_mean = self.extract_harmonic_mean_position(extended_chords)
         diffs = [substract_positions(armonic_mean,chord.note_in_5h_circle.position_in_5th_circle) \
@@ -105,8 +109,10 @@ class FeatureExtractor:
 
         return list(set(relatives))
 
+    def extract_transposed_chords_names(self, extended_chords, semitones):
+        transposed = [chord.transpose(semitones).standard_name for chord in extended_chords]
 
-
+        return transposed    
 
 def substract_positions(position_1, position_2):
     diff = position_1 - position_2

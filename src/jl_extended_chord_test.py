@@ -183,6 +183,20 @@ def test_returns_standard_name(input_chord, expected_standard_name):
 
     assert chord.standard_name == expected_standard_name
 
+@pytest.mark.parametrize("input_chord,semitones_to_transpose, expected_transposed_chord", [
+     ('C',-1,'B'), 
+     ('A',4,'Db'), 
+     ('D',0,'D'), 
+     ('F',6,'B'), 
+     ('F',-6,'B'), 
+])
+def test_transposes(input_chord, semitones_to_transpose, expected_transposed_chord):
+    chord = ExtendedChord(Chord(input_chord))
+    
+    transpodes_chord_name = chord.transpose(semitones_to_transpose).standard_name
+
+    assert transpodes_chord_name  == expected_transposed_chord
+
 
 
 

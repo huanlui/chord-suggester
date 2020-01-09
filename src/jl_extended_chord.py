@@ -3,6 +3,7 @@ from enum import Enum
 import jl_constants as constants
 from jl_extended_interval import ExtendedInterval
 from jl_dictionaries import Dictionaries
+from pychord_jl import Chord
 
 class ChordMode(Enum):
     Neutral = 0
@@ -112,6 +113,7 @@ class ExtendedChord:
 
         return f'{standard_root}{standard_quality}'
 
-
-
-
+    def transpose(self, semitones):
+        cloned = Chord(self.pychord_chord.chord)
+        cloned.transpose(semitones)
+        return ExtendedChord(cloned)

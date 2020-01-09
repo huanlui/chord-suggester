@@ -149,3 +149,29 @@ def test_extract_relative_on_list(chords, expected_relative_on_list):
     relative_on_list = extractor.extract_relative_on_list(chords)
 
     assert relative_on_list == expected_relative_on_list
+
+@pytest.mark.parametrize('chords, semitones, expected_transposed_chords', [
+    (['C', 'G', 'C'], 1, ['Db', 'Ab', 'Db']),
+     (['C', 'G', 'C'], -1, ['B', 'F#', 'B']),
+])
+def test_extract_transposed_chords(chords, semitones, expected_transposed_chords):
+    extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
+
+    transposed_chords = extractor.extract_transposed_chords_names(chords, semitones)
+
+    assert transposed_chords == expected_transposed_chords
+
+@pytest.mark.parametrize('harmonic_mean_in_5th_circle, expected_harmonic_mean_in_scale', [
+    (1,7),
+    (-1,5),
+    (1.2,7),
+    (1.8,2),
+    (-1.7,10),
+])
+def test_extract_harmonic_mean_in_scale(harmonic_mean_in_5th_circle, expected_harmonic_mean_in_scale):
+    extractor = FeatureExtractor()
+
+    harmonic_mean_in_scale = extractor.extract_harmonic_mean_in_scale(harmonic_mean_in_5th_circle)
+
+    assert harmonic_mean_in_scale == expected_harmonic_mean_in_scale

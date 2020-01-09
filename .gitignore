@@ -4,4 +4,5 @@ data/private/
 .pytest_cache/
 .vscode/
 data/chords*
+data/all_features.csv
 data/raw_html/
