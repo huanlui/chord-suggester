@@ -4,9 +4,7 @@ This repo contains the code for my KSchool Data Science Master's thesis.
 
 This readme will be improved. [This document](doc/initial-presentation.pdf) contains an brief intruduction. 
 
-## Installation
-
-### Libraries
+## Installing libraries
 
 The easiest way to execute this proyect is by installing the last version of [Anaconda](https://www.anaconda.com/distribution/), a distribution that contains the most of the libraries used in this project. 
 
@@ -33,19 +31,19 @@ pip install "beautifulsoup4==4.8.2"
 conda create --name <env> --file src/requirements-conda.txt
 ```
 
-### Selenium
+## Installing Selenium
 
 Scraping notebooks need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed chrome version.
 
 In `MacOS`, you must additionally allow mac-os to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
 
-### How to correctly show sheets on notebooks
+## Showing sheets on notebooks
 
 In order to make `show()` function work when using `music21` on Notebooks, any music engraving software (such as `Finale`, `Sibelius` or `MuseScore`) needs to be installed. 
 
 I recommend [MuseScore](https://musescore.org) because it is for free, open source, easy to install and light. 
 
-### How to convert model created from Python Keras to TensorFlow.js format in a Conda Environment
+## Converting model created from Python Keras to TensorFlow.js format in a Conda Environment
 
 `TensorFlow.js` is required but please, stop and don't write ``~pip install tensorflowjs~`` becasue it could break your Anaconda installation (it was my case...).
 
@@ -53,7 +51,7 @@ The reason is that it requires Python 3.6.8 to work and recent Anaconda distribu
 
 __1. Install Python 3.6.8 in a virtual environment:__
 
-To force Python 3.6.8 in your local project (I recommend a folder outside the repo), you can install
+To force Python 3.6.8 in your local project, you can install
 [`pyenv`](https://github.com/pyenv/pyenv) and proceed as follows in the target
 directory:
 
@@ -92,3 +90,41 @@ Note that the input path used above is a subfolder generated automatically by `t
 saved a tf.keras model in the SavedModel format.
 
 The output folder will contain a .json file ready to be copied to frontend `public` folder. 
+
+
+In order to easily convert all the generated models and copy to frontend directory, two scripts are provided. They can be found in `model` folder, where all the generated models are saved:
+
+* `convert-all-models.sh`: converts all the models (files with .h5 extensions) to `TensorFlow.js` models (a folder starting with `tfjs_model`). To execute, from a  terminal type:
+
+```bash
+sh convert-all-models.sh
+```
+
+* `copy-models-to-frontend.sh`: copies all the `TensorFlow.js` models (folders) into `public/models` folder of frontend project. This requires that frontend repository is under the same folder as this repository.  To execute, from a  terminal type:
+
+```bash
+sh copy-models-to-frontend.sh
+```
+## .py files
+
+To avoid errors and improve the codebase quality, some funtions have been extracted from the notebooks and included in `.py` files. All these files have this pattern as name: `jl_xxx.py`. This allows:
+
+* Reuse function in different notebooks. 
+* Test this functions. This is important in a DataScience project, where much time is wasted discovering errors or, even worse, where hidden errors are creating misbehaviours in production. 
+
+## jl_pychord
+
+Pychord is a library to managed musical chords in Python. It does not have all the necessary functionality, so its repo has been cloned an modified here. This is technical debt: the right action would have been to fork the repo, add the necessary documentation an even create a PR for asking the author to merge it. 
+
+## Testing
+
+In requirements files, `pytest` is included. It is a unit test library.
+
+Most .py files are covered by test. 
+
+To run the test, once `pytest` is installed, from src folder in terminal:
+
+```bash
+pytest
+```
+
