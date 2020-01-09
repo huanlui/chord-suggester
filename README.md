@@ -77,7 +77,7 @@ __2. Install the TensorFlow.js pip package:__
  pip install tensorflowjs
 ```
 
-__3. Run the converter script provided by the pip package:__
+__3. Run (from command line) the converter script provided by the pip package:__
 
 In this case, our models have HDF5 format. 
 
