@@ -3,6 +3,9 @@ from pytest import approx
 from jl_feature_extractor import FeatureExtractor
 from jl_extended_chord import ChordMode
 from math import atan2, pi
+from jl_chord_parser import ChordParser
+
+parse = ChordParser().parse
 
 @pytest.mark.parametrize("raw_url,expected_artist", [
     ("https://tabs.ultimate-guitar.com/tab/1055161","Unknown"), 
@@ -41,6 +44,7 @@ def test_extracts_numeric_from_string_decade(input, expected_decade_as_number):
 ])
 def test_extracts_cardinality(chords, expected_cardinality):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     cardinality = extractor.extract_cardinality(chords)
 
@@ -50,11 +54,13 @@ def test_extracts_cardinality(chords, expected_cardinality):
     (["C#"],1), 
     (["C#", "D"],2), 
     (["C#", "E", "E"],2), 
+    (["C#", "Emaj", "E"],2), 
     (["C#", "E", "E", "F", "C#m", "C#"],4),
     ([],0), 
 ])
 def test_extracts_unique_cardinality(chords, expected_unique_cardinality):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     unique_cardinality = extractor.extract_unique_cardinality(chords)
 
@@ -70,6 +76,7 @@ def test_extracts_unique_cardinality(chords, expected_unique_cardinality):
 ])
 def test_extracts_mode_cardinality(chords,mode, expected_mode_cardinality):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     mode_cardinality = extractor.extract_mode_cardinality(chords, mode)
 
@@ -85,6 +92,7 @@ def test_extracts_mode_cardinality(chords,mode, expected_mode_cardinality):
 ])
 def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     harmonic_mean_position = extractor.extract_harmonic_mean_position(chords)
 
@@ -97,6 +105,7 @@ def test_extract_harmonic_mean_position(chords, expected_harmonic_mean_position)
 ])
 def test_extract_harmonic_subdominant_width(chords, expected_subdominant_width):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     subdominant_width = extractor.extract_subdominant_width(chords)
 
@@ -109,6 +118,7 @@ def test_extract_harmonic_subdominant_width(chords, expected_subdominant_width):
 ])
 def test_extract_harmonic_dominant_width(chords, expected_dominant_width):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     dominant_width = extractor.extract_dominant_width(chords)
 
@@ -121,6 +131,7 @@ def test_extract_harmonic_dominant_width(chords, expected_dominant_width):
 ])
 def test_extract_complexity(chords, expected_complexity):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     complexity = extractor.extract_complexity(chords)
 
@@ -133,6 +144,7 @@ def test_extract_complexity(chords, expected_complexity):
 ])
 def test_extract_relative_on_list(chords, expected_relative_on_list):
     extractor = FeatureExtractor()
+    chords = [parse(chord) for chord in chords]
 
     relative_on_list = extractor.extract_relative_on_list(chords)
 

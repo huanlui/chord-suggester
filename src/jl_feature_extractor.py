@@ -7,6 +7,13 @@ import jl_constants as constants
 class FeatureExtractor:
     def __init__(self):
         self.parser = ChordParser()
+    
+    def extract_chord_object_list_removing_non_valid(self,chord_names_str):
+        chord_names = eval(chord_names_str) # Data comes in string format, we must convert it to an array.
+        extended_chords = [self.parser.parse(chord_name) for chord_name in chord_names] # parse returns non if chord is not valid
+        valid_extended_chords = [chord for chord in extended_chords if chord is not None] 
+
+        return valid_extended_chords
 
     def extract_raw_artist(self,url):
         plain_url = url.replace('https://tabs.ultimate-guitar.com/tab/','')
@@ -27,20 +34,17 @@ class FeatureExtractor:
     def extract_numeric_decade(self,input):
         return int(input.replace('s',''))
 
-    def extract_cardinality(self,chords):
-        return len(chords)
+    def extract_cardinality(self,extended_chords):
+        return len(extended_chords)
 
     def extract_unique_cardinality(self,chords):
-        return len(set(chords))
+        return len(set([chord.standard_name for chord in chords]))
 
-    def extract_mode_cardinality(self,chords,mode):
-        extended_chords = [self.parser.parse(chord) for chord in chords]
-
+    def extract_mode_cardinality(self,extended_chords,mode):
         return len([chord for chord in extended_chords if chord.mode == mode ])
 
-    def extract_harmonic_mean(self, chords): 
+    def extract_harmonic_mean(self, extended_chords): 
         mean = lambda values: sum(values) / len(values)
-        extended_chords = [self.parser.parse(chord) for chord in chords]
 
         x = [chord.x_in_5th_circle for chord in extended_chords]
         y = [chord.y_in_5th_circle for chord in extended_chords]
@@ -71,10 +75,8 @@ class FeatureExtractor:
 
         return angle_degrees / constants.STEP_ANGLE
 
-    def extract_subdominant_width(self, chords):
-        extended_chords = [self.parser.parse(chord) for chord in chords]
-
-        armonic_mean = self.extract_harmonic_mean_position(chords)
+    def extract_subdominant_width(self, extended_chords):
+        armonic_mean = self.extract_harmonic_mean_position(extended_chords)
         diffs = [substract_positions(armonic_mean,chord.note_in_5h_circle.position_in_5th_circle) \
                    for chord in extended_chords]
 
@@ -82,10 +84,8 @@ class FeatureExtractor:
 
         return max(diffs) if len(diffs) > 0 else 0
 
-    def extract_dominant_width(self, chords):
-        extended_chords = [self.parser.parse(chord) for chord in chords]
-
-        armonic_mean = self.extract_harmonic_mean_position(chords)
+    def extract_dominant_width(self, extended_chords):
+        armonic_mean = self.extract_harmonic_mean_position(extended_chords)
         diffs = [substract_positions(armonic_mean,chord.note_in_5h_circle.position_in_5th_circle) \
                    for chord in extended_chords]
 
@@ -93,14 +93,12 @@ class FeatureExtractor:
 
         return abs(min(diffs)) if len(diffs) > 0 else 0
 
-    def extract_complexity(self,chords): 
-        complexities = [self.parser.parse(chord).complexity for chord in chords]
+    def extract_complexity(self,extended_chords): 
+        complexities = [chord.complexity for chord in extended_chords]
 
         return sum(complexities) / len(complexities)
 
-    def extract_relative_on_list(self, chords):
-        extended_chords = [self.parser.parse(chord) for chord in chords]
-
+    def extract_relative_on_list(self, extended_chords):
         relatives = [chord.relative_on for chord in extended_chords]
 
         relatives = [relative for relative in relatives if relative is not None]
