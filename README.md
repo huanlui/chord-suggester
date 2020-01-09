@@ -4,9 +4,9 @@ This repo contains the code for my KSchool Data Science Master's thesis.
 
 This readme will be improved. [This document](doc/initial-presentation.pdf) contains an brief intruduction. 
 
-# Installation
+## Installation
 
-## Libraries
+### Libraries
 
 The easiest way to execute this proyect is by installing the last version of [Anaconda](https://www.anaconda.com/distribution/), a distribution that contains the most of the libraries used in this project. 
 
@@ -33,19 +33,19 @@ pip install "beautifulsoup4==4.8.2"
 conda create --name <env> --file src/requirements-conda.txt
 ```
 
-## Selenium
+### Selenium
 
 Scraping notebooks need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed chrome version.
 
 In `MacOS`, you must additionally allow mac-os to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
 
-## How to correctly show sheets on notebooks
+### How to correctly show sheets on notebooks
 
 In order to make `show()` function work when using `music21` on Notebooks, any music engraving software (such as `Finale`, `Sibelius` or `MuseScore`) needs to be installed. 
 
 I recommend [MuseScore](https://musescore.org) because it is for free, open source, easy to install and light. 
 
-## How to convert model created from Python Keras to TensorFlow.js format in a Conda Environment
+### How to convert model created from Python Keras to TensorFlow.js format in a Conda Environment
 
 `TensorFlow.js` is required but please, stop and don't write ``~pip install tensorflowjs~`` becasue it could break your Anaconda installation (it was my case...).
 
