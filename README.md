@@ -143,4 +143,4 @@ There are five notebooks that cover all the needs of the project. They are, in o
 4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb)
 5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb)
 
-The rest of the notebooks (name starting with `DRAFT_`) have been used during the process toi explore data, options, etc. They do not have to be run, but can be intersting to see the development process. 
+The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to explore data, options, etc. They do not have to be run, but can be intersting to see the development process. 
