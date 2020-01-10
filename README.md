@@ -133,4 +133,14 @@ To run the test, once `pytest` is installed, from src folder in terminal:
 ```bash
 pytest
 ```
+## Notebooks
 
+There are five notebooks that cover all the needs of the project. They are, in order:
+
+1. [Scraping - Extracting filter criteria](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb)
+2. [Scraping - Extracting songs.](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb)
+3. [Feature extraction](https://github.com/huanlui/chord-suggester/blob/master/src/03%20-%20Feature%20extraction.ipynb)
+4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb)
+5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb)
+
+The rest of the notebooks (name starting with `DRAFT_`) have been used during the process toi explore data, options, etc. They do not have to be run, but can be intersting to see the development process. 
