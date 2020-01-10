@@ -149,4 +149,4 @@ The rest of the notebooks (name starting with `DRAFT_`) have been used during th
 
 In `model` folder, several models have been exported in both h5 and TensorFlow.js formats. Some of them can be tests that do not work at all. 
 
-The most accurate models are `tfjs_model_lstm_normalised__W_20_lr_0_0005_epochs=50_batch_128.h5` and `tfjs_model_lstm_normalised__W_20_lr_0_001_epochs=50_batch_128.h5`. 
+The most accurate models (the ones used in front-end demo) are `tfjs_model_lstm_normalised__W_20_lr_0_0005_epochs=50_batch_128.h5` and `tfjs_model_lstm_normalised__W_20_lr_0_001_epochs=50_batch_128.h5`. 
