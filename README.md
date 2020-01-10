@@ -1,5 +1,7 @@
 # Chord Suggester
 
+A detailed memory has been posted as a [Medium article](https://medium.com/@huanlui/chordsuggester-i-3a1261d4ea9e)
+
 _ChordSuggester_ is a computer-aided musical composition system. It is not intended to be a professional tool but just the result of a Master’s thesis which tries to cover the whole process for a DataScience project:
 
 * Data Acquisition by scraping data from ultimate-guitar.com using _Selenium_ and _BeaufitulSoup_. This part is interesting by itself since there are no examples of clean datasets including chord songs.
