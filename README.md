@@ -1,8 +1,12 @@
 # Chord Suggester
 
-This repo contains the code for my KSchool Data Science Master's thesis. 
+_ChordSuggester_ is a computer-aided musical composition system. It is not intended to be a professional tool but just the result of a Master’s thesis which tries to cover the whole process for a DataScience project:
 
-This readme will be improved. [This document](doc/initial-presentation.pdf) contains an brief intruduction. 
+* Data Acquisition by scraping data from ultimate-guitar.com using _Selenium_ and _BeaufitulSoup_. This part is interesting by itself since there are no examples of clean datasets including chord songs.
+* Data cleaning and preparation, using _Pandas_ and _music21_.
+* Data analysis, using _Pandas_.
+* Modelling, using _Keras_ for training an LSTM neural network. 
+* Visualisation of the results on a _React_ Application that consumes the model using _TensorFlow.js_ and shows the results using the musical JavaScript libraries _Tone.js_ and _Vexflow_. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend) 
 
 ## Installing libraries
 
