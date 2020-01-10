@@ -144,3 +144,9 @@ There are five notebooks that cover all the needs of the project. They are, in o
 5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb)
 
 The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to explore data, options, etc. They do not have to be run, but can be intersting to see the development process. 
+
+## Models
+
+In `model` folder, several models have been exported in both h5 and TensorFlow.js formats. Some of them can be tests that do not work at all. 
+
+The most accurate models are `tfjs_model_lstm_normalised__W_20_lr_0_0005_epochs=50_batch_128.h5` and `tfjs_model_lstm_normalised__W_20_lr_0_001_epochs=50_batch_128.h5`. 
