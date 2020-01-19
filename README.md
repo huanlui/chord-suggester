@@ -39,7 +39,7 @@ conda create --name <env> --file src/requirements-conda.txt
 
 ## Installing Selenium
 
-Scraping notebooks (see [01 - Scraping - Extracting filter criteria.ipynb](/src/01 - Scraping - Extracting filter criteria.ipynb)) need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed `Chrome` version.
+Scraping notebooks (see [01 - Scraping - Extracting filter criteria.ipynb](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb) and [02 - Scraping - Extracting songs.ipynb](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb)) need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed `Chrome` version.
 
 In `MacOS`, you must additionally allow mac-os to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
 
