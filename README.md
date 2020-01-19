@@ -12,17 +12,17 @@ _ChordSuggester_ is a computer-aided musical composition system. It is not inten
 
 ## Installing libraries
 
-The easiest way to execute this proyect is by installing the last version of [Anaconda](https://www.anaconda.com/distribution/), a distribution that contains the most of the libraries used in this project. 
+The easiest way to execute this project is by installing the last version of [Anaconda](https://www.anaconda.com/distribution/), a distribution that contains most of the libraries used in this project. 
 
 Once installed, there are three options:
 
-- Install only libraries not included in conda (automatic way) by executing:
+- Install only libraries not included in Conda (automatic way) by executing:
 
 ```bash
 pip install -r src/requirements.txt
 ```
 
-- Install only libreries not included in conda by executing:
+- Install only libreries not included in Conda by executing:
 
 ```bash
 pip install "pytest==5.3.2"
@@ -39,15 +39,15 @@ conda create --name <env> --file src/requirements-conda.txt
 
 ## Installing Selenium
 
-Scraping notebooks need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed chrome version.
+Scraping notebooks (see [01 - Scraping - Extracting filter criteria.ipynb](/src/01 - Scraping - Extracting filter criteria.ipynb)) need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed `Chrome` version.
 
 In `MacOS`, you must additionally allow mac-os to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
 
 ## Showing sheets on notebooks
 
-In order to make `show()` function work when using `music21` on Notebooks, any music engraving software (such as `Finale`, `Sibelius` or `MuseScore`) needs to be installed. 
+In order to make `show()` function work when using `music21` on Notebooks, any music engraving software (such as `Finale`, `Sibelius` or `MuseScore`) has to be installed. 
 
-I recommend [MuseScore](https://musescore.org) because it is for free, open source, easy to install and light. 
+I recommend [MuseScore](https://musescore.org) because it is for free, open source, easy to install and lightweight. 
 
 ## Converting model created from Python Keras to TensorFlow.js format in a Conda Environment
 
@@ -92,8 +92,8 @@ tensorflowjs_converter \
     /tmp/my_tfjs_model
 ```
 
-Note that the input path used above is a subfolder generated automatically by `tensorflow` when it
-saved a tf.keras model in the SavedModel format.
+Note that the input path used above is a subfolder generated automatically by `Keras` when it
+saved a tf.keras model in the ModelCheckpoint layer.
 
 The output folder will contain a .json file ready to be copied to frontend `public` folder. 
 
