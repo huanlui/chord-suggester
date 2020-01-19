@@ -8,7 +8,7 @@ _ChordSuggester_ is a computer-aided musical composition system. It is not inten
 * Data cleaning and preparation, using `Pandas` and `music21`.
 * Data analysis, using `Pandas`.
 * Modelling, using `Keras` for training an LSTM neural network. 
-* Visualisation of the results on a `React` Application that consumes the model using _TensorFlow.js_ and shows the results using the musical JavaScript libraries `Tone.js` and `Vexflow`. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend).
+* Visualisation of the results on a `React` Application that consumes the model using `TensorFlow.js` and shows the results using the music libraries `Tone.js` and `Vexflow`. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend).
 
 ## Installing libraries
 
