@@ -12,17 +12,17 @@ _ChordSuggester_ is a computer-aided musical composition system. It is not inten
 
 ## Installing libraries
 
-The easiest way to execute this project is by installing the last version of [Anaconda](https://www.anaconda.com/distribution/), a distribution that contains most of the libraries used in this project. 
+The easiest way to execute this project is by installing the last version of [`Anaconda`](https://www.anaconda.com/distribution/), a distribution that contains most of the libraries used in this project. 
 
 Once installed, there are three options:
 
-- Install only libraries not included in Conda (automatic way) by executing:
+- Install only libraries not included in `Conda` (automatic way) by executing:
 
 ```bash
 pip install -r src/requirements.txt
 ```
 
-- Install only libreries not included in Conda by executing:
+- Install only libreries not included in `Conda` by executing:
 
 ```bash
 pip install "pytest==5.3.2"
@@ -31,7 +31,7 @@ pip install "music21==5.7.0"
 pip install "beautifulsoup4==4.8.2"
 ```
 
-- Create a conda environment by using:
+- Create a `Conda` environment by using:
 
 ```bash
 conda create --name <env> --file src/requirements-conda.txt
@@ -143,7 +143,7 @@ There are five notebooks that cover all the needs of the project. They are, in o
 4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb)
 5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb)
 
-The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to explore data, options, etc. They do not have to be run, but can be intersting to see the development process. 
+The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to inspect data, explore different, options, etc. They do not have to be run, but can be interesting to see the development process. 
 
 ## Models
 
