@@ -1,14 +1,14 @@
 # Chord Suggester
 
-**Initial note**: This `readme` explains how to run this project. For a detailed memory about the scope of the project, please visit this [articule at `Medium`](https://medium.com/@huanlui/chordsuggester-i-3a1261d4ea9e)
+**Initial note**: This `readme` explains how to run this project. For a detailed memory about the scope of the project, please visit this [article at `Medium`](https://medium.com/@huanlui/chordsuggester-i-3a1261d4ea9e).
 
-_ChordSuggester_ is a computer-aided musical composition system. It is not intended to be a professional tool but just the result of a Master’s thesis which tries to cover the whole process for a DataScience project:
+_ChordSuggester_ is a computer-aided musical composition system. It is not intended to be a professional tool but just the result of a Master’s thesis covering the whole process for a DataScience project:
 
-* Data Acquisition by scraping data from `ultimate-guitar.com` using `Selenium` and `BeaufitulSoup`. This part is interesting by itself since there are no examples of clean datasets including chord songs.
-* Data cleaning and preparation, using `Pandas` and `music21`.
-* Data analysis, using `Pandas`.
-* Modelling, using `Keras` for training an LSTM neural network. 
-* Visualisation of the results on a `React` Application that consumes the model using `TensorFlow.js` and shows the results using the music libraries `Tone.js` and `Vexflow`. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend).
+* **Data Acquisition** by scraping data from `ultimate-guitar.com` using `Selenium` and `BeaufitulSoup`. This part is interesting by itself since there are no examples of clean datasets including chord songs.
+* **Data cleaning** and preparation, using `Pandas` and `music21`.
+* **Data analysis**, using `Pandas`.
+* **Modelling**, using `Keras` for training an LSTM neural network. 
+* **Visualisation** of the results on a `React` Application that consumes the model using `TensorFlow.js` and shows the results using the music libraries `Tone.js` and `Vexflow`. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend).
 
 ## Installing libraries
 
