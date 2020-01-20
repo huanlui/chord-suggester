@@ -20,13 +20,13 @@ There are five notebooks that cover all the needs of the project. Before running
 4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb). Trains an LSTM to predict the most probable chords after a given chord sequence. 
 5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb). Some utilities to export dictionaries from Python to Javascript. 
 
-The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to inspect data, explore different, options, etc. They do not have to be run, but can be interesting to see the development process. 
+The rest of the notebooks (name starting with `DRAFT_`) have been used to inspect data, explore different approaches, etc. They do not have to be run, but they could be interesting to see the development process. 
 
 ## Installing libraries
 
-The easiest way to execute this project is by installing the last version of [`Anaconda`](https://www.anaconda.com/distribution/), a distribution that contains most of the libraries used in this project. 
+The easiest way to execute this project is by installing the last version of [`Anaconda`](https://www.anaconda.com/distribution/). Most libraries used by this project are included by this distribution. 
 
-Once installed, there are three options:
+Once installed, there are three options to install the rest of required libraries:
 
 - Install only libraries not included in `Conda` (automatic way) by executing:
 
@@ -53,7 +53,7 @@ conda create --name <env> --file src/requirements-conda.txt
 
 Scraping notebooks (see [01 - Scraping - Extracting filter criteria.ipynb](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb) and [02 - Scraping - Extracting songs.ipynb](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb)) need `Chrome Driver` to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and copied (unzipped) to the same folder as the notebook (`src` folder). In the repo, my version is copied, but it could not work on your computer. The driver must be compatible with the installed `Chrome` version.
 
-In `MacOS`, you must additionally allow mac-os to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
+In `MacOS`, you must additionally allow MacOS to run non-known apps: open `System Preferences` and click `Security & Privacy`. Change `Allow apps downloaded from` to `Anywhere`.
 
 ## Showing sheets on notebooks
 
@@ -111,7 +111,7 @@ The output folder will contain a .json file ready to be copied to frontend `publ
 
 In order to easily convert all the generated models and copy them to frontend directory, two scripts are provided. They can be found in `model` folder, where all the generated models are saved:
 
-* `convert-all-models.sh`: converts all the models (files with .h5 extensions) to `TensorFlow.js` models (a folder starting with `tfjs_model`). To execute, from a  terminal type:
+* `convert-all-models.sh`: converts all the models (files with .h5 extensions) to `TensorFlow.js` models (a folder starting with `tfjs_model`). To execute them, type this code from a terminal:
 
 ```bash
 sh convert-all-models.sh
@@ -125,18 +125,18 @@ sh copy-models-to-frontend.sh
 
 ## .py files
 
-To avoid errors and improve codebase quality, some functions have been extracted from the notebooks and included in `.py` files. All these files have this pattern as name: `jl_xxx.py`. This allows:
+To avoid errors and improve codebase quality, some functions have been extracted from notebooks and included in `.py` files. All these files have this pattern as name: `jl_xxx.py`. This allows:
 
 * Reuse function in different notebooks. 
 * Test this functions. This is important in a DataScience project, where much time is wasted discovering errors or, even worse, where hidden errors are creating misbehaviours in production. 
 
 ## jl_pychord
 
-`Pychord` is a nice library to manage musical chords in Python. It does not have all the necessary functionality, so its repo has been cloned an modified here. This is technical debt: the right action would have been to fork the repo, add the necessary documentation an even create a PR for asking the author to merge it. 
+`Pychord` is a nice library to manage musical chords in Python. It does not have all the necessary functionality, so its repo has been cloned an modified here. This is technical debt: the right action would have been to fork the repo, add the necessary documentation and even create a PR for asking the author to merge it. 
 
 ## Testing
 
-In requirements files, `pytest` is included. It is a unit test library.
+In `requirements.txt` file, `pytest` is included. It is a unit test library.
 
 Most `.py` files are covered by tests. 
 
