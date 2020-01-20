@@ -10,6 +10,18 @@ _ChordSuggester_ is a computer-aided musical composition system. It is not inten
 * **Modelling**, using `Keras` for training an LSTM neural network. 
 * **Visualisation** of the results on a `React` Application that consumes the model using `TensorFlow.js` and shows the results using the music libraries `Tone.js` and `Vexflow`. This code is in a [separate repo](https://github.com/huanlui/chord-suggester-frontend).
 
+## Notebooks
+
+There are five notebooks that cover all the needs of the project. Before running them, please, read carefully the whole readme. The notebooks are, in order:
+
+1. [Scraping - Extracting filter criteria](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb). Extracts the filter criteria (genre, style and decade) to be used by the next notebook. 
+2. [Scraping - Extracting songs.](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb). Extracts the songs (name, decade, url, genre, chords...)
+3. [Feature extraction](https://github.com/huanlui/chord-suggester/blob/master/src/03%20-%20Feature%20extraction.ipynb). Feature engineering over the dataset extracted by the previous notebook. 
+4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb). Trains an LSTM to predict the most probable chords after a given chord sequence. 
+5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb). Some utilities to export dictionaries from Python to Javascript. 
+
+The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to inspect data, explore different, options, etc. They do not have to be run, but can be interesting to see the development process. 
+
 ## Installing libraries
 
 The easiest way to execute this project is by installing the last version of [`Anaconda`](https://www.anaconda.com/distribution/), a distribution that contains most of the libraries used in this project. 
@@ -133,18 +145,6 @@ To run the tests, once `pytest` is installed, write the following from src folde
 ```bash
 pytest
 ```
-
-## Notebooks
-
-There are five notebooks that cover all the needs of the project. They are, in order:
-
-1. [Scraping - Extracting filter criteria](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb). Extracts the filter criteria (genre, style and decade) to be used by the next notebook. 
-2. [Scraping - Extracting songs.](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb). Extracts the songs (name, decade, url, genre, chords...)
-3. [Feature extraction](https://github.com/huanlui/chord-suggester/blob/master/src/03%20-%20Feature%20extraction.ipynb). Feature engineering over the dataset extracted by the previous notebook. 
-4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb). Trains an LSTM to predict the most probable chords after a given chord sequence. 
-5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb). Some utilities to export dictionaries from Python to Javascript. 
-
-The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to inspect data, explore different, options, etc. They do not have to be run, but can be interesting to see the development process. 
 
 ## Models
 
