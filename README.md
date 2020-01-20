@@ -1,10 +1,10 @@
 # Chord Suggester
 
-**Initial note**: This `readme` explains how to run this project. For a detailed memory about the scope of the project, please visit this [article at `Medium`](https://medium.com/@huanlui/chordsuggester-i-3a1261d4ea9e).
+**Initial note**: This `readme` explains how to run this project. For a detailed memory about the scope of this project, please visit this [article at `Medium`](https://medium.com/@huanlui/chordsuggester-i-3a1261d4ea9e).
 
 _ChordSuggester_ is a computer-aided musical composition system. It is not intended to be a professional tool but just the result of a Master’s thesis covering the whole process for a DataScience project:
-
-* **Data Acquisition** by scraping data from `ultimate-guitar.com` using `Selenium` and `BeaufitulSoup`. This part is interesting by itself since there are no examples of clean datasets including chord songs.
+  
+* **Data Acquisition** by scraping data from `ultimate-guitar.com` using `Selenium` and `BeautifulSoup`. This part is interesting by itself since there are no examples of clean datasets including chord songs.
 * **Data cleaning** and preparation, using `Pandas` and `music21`.
 * **Data analysis**, using `Pandas`.
 * **Modelling**, using `Keras` for training an LSTM neural network. 
@@ -22,7 +22,7 @@ Once installed, there are three options:
 pip install -r src/requirements.txt
 ```
 
-- Install only libreries not included in `Conda` by executing:
+- Install only libraries not included in `Conda` by executing:
 
 ```bash
 pip install "pytest==5.3.2"
@@ -51,7 +51,7 @@ I recommend [MuseScore](https://musescore.org) because it is for free, open sour
 
 ## Converting model created from Python Keras to TensorFlow.js format in a Conda Environment
 
-`TensorFlow.js` is required but please, stop and don't write ``~pip install tensorflowjs~`` becasue it could break your Anaconda installation (it was my case...).
+`TensorFlow.js` is required but please, stop and don't write ``~pip install tensorflowjs~`` because it could break your Anaconda installation (it was my case...).
 
 The reason is that it requires Python 3.6.8 to work and recent Anaconda distributions have a higher version. 
 
@@ -92,13 +92,12 @@ tensorflowjs_converter \
     /tmp/my_tfjs_model
 ```
 
-Note that the input path used above is a subfolder generated automatically by `Keras` when it
+Note that the input path used above is a sub-folder generated automatically by `Keras` when it
 saved a tf.keras model in the ModelCheckpoint layer.
 
 The output folder will contain a .json file ready to be copied to frontend `public` folder. 
 
-
-In order to easily convert all the generated models and copy to frontend directory, two scripts are provided. They can be found in `model` folder, where all the generated models are saved:
+In order to easily convert all the generated models and copy them to frontend directory, two scripts are provided. They can be found in `model` folder, where all the generated models are saved:
 
 * `convert-all-models.sh`: converts all the models (files with .h5 extensions) to `TensorFlow.js` models (a folder starting with `tfjs_model`). To execute, from a  terminal type:
 
@@ -106,42 +105,44 @@ In order to easily convert all the generated models and copy to frontend directo
 sh convert-all-models.sh
 ```
 
-* `copy-models-to-frontend.sh`: copies all the `TensorFlow.js` models (folders) into `public/models` folder of frontend project. This requires that frontend repository is under the same folder as this repository.  To execute, from a  terminal type:
+* `copy-models-to-frontend.sh`: copies all the `TensorFlow.js` models (folders) into `public/models` folder of frontend project. This requires frontend repository to be under the same folder as this repository.  To execute from a terminal type:
 
 ```bash
 sh copy-models-to-frontend.sh
 ```
+
 ## .py files
 
-To avoid errors and improve the codebase quality, some funtions have been extracted from the notebooks and included in `.py` files. All these files have this pattern as name: `jl_xxx.py`. This allows:
+To avoid errors and improve codebase quality, some functions have been extracted from the notebooks and included in `.py` files. All these files have this pattern as name: `jl_xxx.py`. This allows:
 
 * Reuse function in different notebooks. 
 * Test this functions. This is important in a DataScience project, where much time is wasted discovering errors or, even worse, where hidden errors are creating misbehaviours in production. 
 
 ## jl_pychord
 
-Pychord is a library to managed musical chords in Python. It does not have all the necessary functionality, so its repo has been cloned an modified here. This is technical debt: the right action would have been to fork the repo, add the necessary documentation an even create a PR for asking the author to merge it. 
+`Pychord` is a nice library to manage musical chords in Python. It does not have all the necessary functionality, so its repo has been cloned an modified here. This is technical debt: the right action would have been to fork the repo, add the necessary documentation an even create a PR for asking the author to merge it. 
 
 ## Testing
 
 In requirements files, `pytest` is included. It is a unit test library.
 
-Most .py files are covered by test. 
+Most `.py` files are covered by tests. 
 
-To run the test, once `pytest` is installed, from src folder in terminal:
+To run the tests, once `pytest` is installed, write the following from src folder in terminal:
 
 ```bash
 pytest
 ```
+
 ## Notebooks
 
 There are five notebooks that cover all the needs of the project. They are, in order:
 
-1. [Scraping - Extracting filter criteria](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb)
-2. [Scraping - Extracting songs.](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb)
-3. [Feature extraction](https://github.com/huanlui/chord-suggester/blob/master/src/03%20-%20Feature%20extraction.ipynb)
-4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb)
-5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb)
+1. [Scraping - Extracting filter criteria](https://github.com/huanlui/chord-suggester/blob/master/src/01%20-%20Scraping%20-%20Extracting%20filter%20criteria.ipynb). Extracts the filter criteria (genre, style and decade) to be used by the next notebook. 
+2. [Scraping - Extracting songs.](https://github.com/huanlui/chord-suggester/blob/master/src/02%20-%20Scraping%20-%20Extracting%20songs.ipynb). Extracts the songs (name, decade, url, genre, chords...)
+3. [Feature extraction](https://github.com/huanlui/chord-suggester/blob/master/src/03%20-%20Feature%20extraction.ipynb). Feature engineering over the dataset extracted by the previous notebook. 
+4. [Model](https://github.com/huanlui/chord-suggester/blob/master/src/04%20-%20Model.ipynb). Trains an LSTM to predict the most probable chords after a given chord sequence. 
+5. [Exporting model to Javascript](https://github.com/huanlui/chord-suggester/blob/master/src/05%20-%20Exporting%20model%20to%20Javascript.ipynb). Some utilities to export dictionaries from Python to Javascript. 
 
 The rest of the notebooks (name starting with `DRAFT_`) have been used during the process to inspect data, explore different, options, etc. They do not have to be run, but can be interesting to see the development process. 
 
